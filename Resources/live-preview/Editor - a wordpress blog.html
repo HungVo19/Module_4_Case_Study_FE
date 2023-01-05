@@ -1,0 +1,1247 @@
+<!DOCTYPE html>
+<!-- saved from url=(0067)http://themes.pixelwars.org/editor-html/?storefront=envato-elements -->
+<html class="is-menu-fixed js flexbox canvas canvastext webgl no-touch geolocation postmessage websqldatabase indexeddb hashchange history draganddrop websockets rgba hsla multiplebgs backgroundsize borderimage borderradius boxshadow textshadow opacity cssanimations csscolumns cssgradients cssreflections csstransforms csstransforms3d csstransitions fontface generatedcontent video audio localstorage sessionstorage webworkers no-applicationcache svg inlinesvg smil svgclippaths csstransformspreserve3d" style=""><script id="allow-copy_script">(function agent() {
+    let unlock = false
+    document.addEventListener('allow_copy', (event) => {
+      unlock = event.detail.unlock
+    })
+
+    const copyEvents = [
+      'copy',
+      'cut',
+      'contextmenu',
+      'selectstart',
+      'mousedown',
+      'mouseup',
+      'mousemove',
+      'keydown',
+      'keypress',
+      'keyup',
+    ]
+    const rejectOtherHandlers = (e) => {
+      if (unlock) {
+        e.stopPropagation()
+        if (e.stopImmediatePropagation) e.stopImmediatePropagation()
+      }
+    }
+    copyEvents.forEach((evt) => {
+      document.documentElement.addEventListener(evt, rejectOtherHandlers, {
+        capture: true,
+      })
+    })
+  })()</script><!-- InstanceBegin template="/Templates/page-fixed.dwt" codeOutsideHTMLIsLocked="false" --><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Editor - Responsive HTML5 Template">
+    <meta name="keywords" content="editor, blog, html5, portfolio">
+    <meta name="author" content="Pixelwars">
+    
+    <!-- FAV and TOUCH ICONS -->
+    <link rel="shortcut icon" href="http://themes.pixelwars.org/editor-html/images/ico/favicon.ico">
+    <link rel="apple-touch-icon" href="http://themes.pixelwars.org/editor-html/images/ico/apple-touch-icon.png">
+    
+    <title>Editor - a wordpress blog</title>
+	
+    <!-- FONTS -->
+    <link href="./Editor - a wordpress blog_files/css" rel="stylesheet" type="text/css">
+    <link href="./Editor - a wordpress blog_files/css(1)" rel="stylesheet" type="text/css">
+    
+    <!-- STYLES -->
+    <link rel="stylesheet" type="text/css" href="./Editor - a wordpress blog_files/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="./Editor - a wordpress blog_files/fontello.css">
+    <link rel="stylesheet" type="text/css" href="./Editor - a wordpress blog_files/uniform.default.css">
+    <link rel="stylesheet" type="text/css" href="./Editor - a wordpress blog_files/magnific-popup.css">
+    <link rel="stylesheet" type="text/css" href="./Editor - a wordpress blog_files/fluidbox.css">
+    <link rel="stylesheet" type="text/css" href="./Editor - a wordpress blog_files/owl.carousel.css">
+    <link rel="stylesheet" type="text/css" href="./Editor - a wordpress blog_files/selection-sharer.css">
+    <link rel="stylesheet" type="text/css" href="./Editor - a wordpress blog_files/elastislide.css">
+    <link rel="stylesheet" type="text/css" href="./Editor - a wordpress blog_files/align.css">
+    <link rel="stylesheet" type="text/css" href="./Editor - a wordpress blog_files/main.css">
+    <link rel="stylesheet" type="text/css" href="./Editor - a wordpress blog_files/768.css">
+    <link rel="stylesheet" type="text/css" href="./Editor - a wordpress blog_files/992.css">
+    
+    <!-- INITIAL SCRIPTS -->
+    <script src="./Editor - a wordpress blog_files/jquery-1.11.1.min.js.download"></script>
+    <script src="./Editor - a wordpress blog_files/jquery-migrate-1.2.1.min.js.download"></script>
+    <script src="./Editor - a wordpress blog_files/modernizr.min.js.download"></script>
+    
+    <!-- InstanceBeginEditable name="head" -->
+    <!-- InstanceEndEditable -->
+    
+<style id="fit-vids-style">.fluid-width-video-wrapper{width:100%;position:relative;padding:0;}.fluid-width-video-wrapper iframe,.fluid-width-video-wrapper object,.fluid-width-video-wrapper embed {position:absolute;top:0;left:0;width:100%;height:100%;}</style></head>
+
+<body>
+
+    <!-- page -->
+    <div id="page" class="hfeed site">
+        
+        <!-- header -->
+        <header id="masthead" class="site-header" role="banner">
+ 				
+                <!-- site-navigation -->
+                <nav id="primary-navigation" class="site-navigation primary-navigation" role="navigation">
+                    
+                    <a class="menu-toggle"><span class="lines"></span></a>
+                    
+                    <!-- nav-menu -->
+                    <div class="nav-menu">
+                        <ul>
+                            <li><a href="http://themes.pixelwars.org/editor-html/index.html">Home</a>
+                            	<!-- level 2 -->
+                                <ul>
+                                    <li><a href="http://themes.pixelwars.org/editor-html/home-alt.html">Home Alternate</a></li>
+                                    <li><a href="http://themes.pixelwars.org/editor-html/blog-masonry.html">Blog Masonry</a></li>
+                                	<li><a href="http://themes.pixelwars.org/editor-html/blog-simple.html">Blog Simple</a></li>
+                                    <li><a href="http://themes.pixelwars.org/editor-html/blog-regular-with-sidebar.html">Blog Regular Sidebar</a></li>
+                                    <li><a href="http://themes.pixelwars.org/editor-html/blog-masonry-with-sidebar.html">Blog Masonry Sidebar</a></li>
+                                </ul>
+                                <!-- level 2 -->
+                            </li>
+                            <li><a href="http://themes.pixelwars.org/editor-html/portfolio.html">Portfolio</a></li>
+                            <li><a href="http://themes.pixelwars.org/editor-html/books.html">Books</a></li>
+                            <li><a href="http://themes.pixelwars.org/editor-html/gallery.html">Gallery</a></li>
+                            <li><a href="http://themes.pixelwars.org/editor-html/about.html">About Me</a>
+                            	<!-- level 2 -->
+                                <ul>
+                                    <li><a href="http://themes.pixelwars.org/editor-html/resume.html">Resume</a></li>
+                                    <li><a href="http://themes.pixelwars.org/editor-html/typo.html">Typography</a></li>
+                                    <li><a href="http://themes.pixelwars.org/editor-html/shortcodes.html">Shortcodes</a></li>
+                                    <li><a href="http://themes.pixelwars.org/editor-html/archives.html">Archives</a></li>
+                                    <li><a href="http://themes.pixelwars.org/editor-html/404.html">404</a></li>
+                                    <li><a href="http://themes.pixelwars.org/editor-html/grid.html">Grid</a></li>
+                                    <li><a href="http://themes.pixelwars.org/editor-html/form-elements.html">Forms</a>
+                                    	<!-- level 3 -->
+                                        <ul>
+                                            <li><a href="http://themes.pixelwars.org/editor-html/grid.html">Grid</a></li>
+                                    		<li><a href="http://themes.pixelwars.org/editor-html/form-elements.html">Forms</a></li>
+                                        </ul>
+                                        <!-- level 3 -->
+                                    </li>
+                                </ul>
+                                <!-- level 2 -->
+                            </li>
+                            <li><a href="http://themes.pixelwars.org/editor-html/contact.html">Contact</a></li>
+                        </ul>
+                    </div>
+                    <!-- nav-menu -->
+                    
+                    <a class="search-toggle toggle-link"></a>
+                                        
+                    <!-- search-container -->
+                    <div class="search-container">
+                        
+                        <div class="search-box">
+                            <form role="search" method="get" class="search-form" action="http://themes.pixelwars.org/editor-html/?storefront=envato-elements#">
+                                <label>Search for
+                                    <input type="search" id="search-field" placeholder="type and hit enter" name="s">
+                                </label>
+                                <input type="submit" class="search-submit" value="Search">
+                            </form>
+                        </div>
+                    
+                    </div>
+                    <!-- search-container -->
+                    
+                    <!-- social-container -->
+                    <div class="social-container">
+                        
+                        <ul class="social">
+                            <li><a class="facebook" href="http://themes.pixelwars.org/editor-html/?storefront=envato-elements#"></a></li>
+                            <li><a class="twitter" href="http://themes.pixelwars.org/editor-html/?storefront=envato-elements#"></a></li>
+                            <li><a class="vine" href="http://themes.pixelwars.org/editor-html/?storefront=envato-elements#"></a></li>
+                            <li><a class="dribbble" href="http://themes.pixelwars.org/editor-html/?storefront=envato-elements#"></a></li>
+                            <li><a class="instagram" href="http://themes.pixelwars.org/editor-html/?storefront=envato-elements#"></a></li>
+                        </ul>
+                      
+                        
+                    </div>
+                    <!-- social-container -->
+                    
+                </nav>
+                <!-- site-navigation -->
+                           
+                <!-- site-title -->
+                <h1 class="site-title">
+                	<a href="http://themes.pixelwars.org/editor-html/index.html" rel="home">
+                    	<img src="./Editor - a wordpress blog_files/logo.png" alt="logo">
+                        <!--EDITOR-->
+                    </a>
+                </h1>
+                <!-- site-title -->
+                
+                
+                <!--<h1 class="site-title">
+                	<a href="../index.html" rel="home">
+                        EDITOR
+                    </a>
+                </h1>
+                <p class="site-description">just another minimalist theme.</p>-->
+
+                
+        </header>
+        <!-- header -->
+        
+        
+        
+        
+        <!-- site-main -->
+        <div id="main" class="site-main">
+        
+        
+        
+        	            
+            <!-- primary -->
+        	<div id="primary" class="content-area">
+            	
+                <!-- site-content -->
+                <div id="content" class="site-content" role="main">
+                
+                
+                
+				
+				
+					<!-- InstanceBeginEditable name="FeaturedContent" -->
+					
+                    
+                    
+                    <!-- post-slider -->
+                    <!--<div class="post-slider owl-carousel" data-items="3" data-loop="false" data-center="false" data-mouse-drag="true" data-nav="false" data-dots="false" data-autoplay="true" data-autoplay-speed="600" data-autoplay-timeout="2000">-->
+                    <div class="post-slider owl-carousel owl-theme owl-loaded" data-items="3" data-loop="true" data-dots="false" data-nav="true" data-nav-prev-text="prev" data-nav-next-text="next">
+                    	
+                        <!-- post -->
+                    	
+                        <!-- post -->    
+                        
+                        <!-- post -->
+                    	
+                        <!-- post -->  
+                        
+                        
+                        <!-- post -->
+                    	
+                        <!-- post -->  
+                        
+                        <!-- post -->
+                    	
+                        <!-- post -->  
+                        
+                        <!-- post -->
+                    	
+                        <!-- post -->  
+                            
+                    <div class="owl-stage-outer"><div class="owl-stage" style="transform: translate3d(-1423px, 0px, 0px); transition: all 0s ease 0s; width: 5217.66px;"><div class="owl-item cloned" style="width: 474.333px; margin-right: 0px;"><div class="post-thumbnail" style="background-image:url(images/blog/03.jpg)">
+                                
+                            <!-- .entry-header -->
+                            <header class="entry-header">
+                                
+                                <!-- .entry-meta -->
+                                <div class="entry-meta">
+                                    <span class="cat-links">
+                                        <a href="http://themes.pixelwars.org/editor-html/?storefront=envato-elements#" rel="category tag">Nature</a>
+                                    </span>	
+                                </div>
+                                <!-- .entry-meta -->
+                                
+                                <!-- .entry-title -->
+                                <h1 class="entry-title"><a href="http://themes.pixelwars.org/editor-html/blog-single.html">Cuckoo Events</a></h1>
+                            </header>
+                            <!-- .entry-header -->
+                            
+                        </div></div><div class="owl-item cloned" style="width: 474.333px; margin-right: 0px;"><div class="post-thumbnail" style="background-image:url(images/blog/04.jpg)">
+                                
+                            <!-- .entry-header -->
+                            <header class="entry-header">
+
+                                <!-- .entry-meta -->
+                                <div class="entry-meta">
+                                    <span class="cat-links">
+                                        <a href="http://themes.pixelwars.org/editor-html/?storefront=envato-elements#" rel="category tag">Life</a>
+                                    </span>	
+                                </div>
+                                <!-- .entry-meta -->
+                                
+                                <!-- .entry-title -->
+                                <h1 class="entry-title"><a href="http://themes.pixelwars.org/editor-html/blog-single.html">Stay Calm And Surf</a></h1>
+                            </header>
+                            <!-- .entry-header -->
+                            
+                        </div></div><div class="owl-item cloned" style="width: 474.333px; margin-right: 0px;"><div class="post-thumbnail" style="background-image:url(images/blog/05.jpg)">
+                                
+                            <!-- .entry-header -->
+                            <header class="entry-header">
+                                
+                                <!-- .entry-meta -->
+                                <div class="entry-meta">
+                                    <span class="cat-links">
+                                        <a href="http://themes.pixelwars.org/editor-html/?storefront=envato-elements#" rel="category tag">Fashion</a>
+                                    </span>	
+                                </div>
+                                <!-- .entry-meta -->
+                                
+                                <!-- .entry-title -->
+                                <h1 class="entry-title"><a href="http://themes.pixelwars.org/editor-html/blog-single.html">Becoming a Dragonfly</a></h1>
+                            </header>
+                            <!-- .entry-header -->
+                            
+                        </div></div><div class="owl-item active" style="width: 474.333px; margin-right: 0px;"><div class="post-thumbnail" style="background-image:url(images/blog/01.jpg)">
+                                
+                            <!-- .entry-header -->
+                            <header class="entry-header">
+                                
+                                <!-- .entry-meta -->
+                                <div class="entry-meta">
+                                    <span class="cat-links">
+                                        <a href="http://themes.pixelwars.org/editor-html/?storefront=envato-elements#" rel="category tag">TRAVEL</a>
+                                    </span>	
+                                </div>
+                                <!-- .entry-meta -->
+                                
+                                <!-- .entry-title -->
+                                <h1 class="entry-title"><a href="http://themes.pixelwars.org/editor-html/blog-single.html">There's always light at the end of the tunnel</a></h1>
+                            </header>
+                            <!-- .entry-header -->
+                            
+                        </div></div><div class="owl-item active" style="width: 474.333px; margin-right: 0px;"><div class="post-thumbnail" style="background-image:url(images/blog/02.jpg)">
+                                
+                            <!-- .entry-header -->
+                            <header class="entry-header">
+                                
+                                <!-- .entry-meta -->
+                                <div class="entry-meta">
+                                    <span class="cat-links">
+                                        <a href="http://themes.pixelwars.org/editor-html/?storefront=envato-elements#" rel="category tag">Life</a>
+                                    </span>	
+                                </div>
+                                <!-- .entry-meta -->
+                                
+                                <!-- .entry-title -->
+                                <h1 class="entry-title"><a href="http://themes.pixelwars.org/editor-html/blog-single.html">The Life of Stuff</a></h1>
+                            </header>
+                            <!-- .entry-header -->
+                            
+                        </div></div><div class="owl-item active" style="width: 474.333px; margin-right: 0px;"><div class="post-thumbnail" style="background-image:url(images/blog/03.jpg)">
+                                
+                            <!-- .entry-header -->
+                            <header class="entry-header">
+                                
+                                <!-- .entry-meta -->
+                                <div class="entry-meta">
+                                    <span class="cat-links">
+                                        <a href="http://themes.pixelwars.org/editor-html/?storefront=envato-elements#" rel="category tag">Nature</a>
+                                    </span>	
+                                </div>
+                                <!-- .entry-meta -->
+                                
+                                <!-- .entry-title -->
+                                <h1 class="entry-title"><a href="http://themes.pixelwars.org/editor-html/blog-single.html">Cuckoo Events</a></h1>
+                            </header>
+                            <!-- .entry-header -->
+                            
+                        </div></div><div class="owl-item active" style="width: 474.333px; margin-right: 0px;"><div class="post-thumbnail" style="background-image:url(images/blog/04.jpg)">
+                                
+                            <!-- .entry-header -->
+                            <header class="entry-header">
+
+                                <!-- .entry-meta -->
+                                <div class="entry-meta">
+                                    <span class="cat-links">
+                                        <a href="http://themes.pixelwars.org/editor-html/?storefront=envato-elements#" rel="category tag">Life</a>
+                                    </span>	
+                                </div>
+                                <!-- .entry-meta -->
+                                
+                                <!-- .entry-title -->
+                                <h1 class="entry-title"><a href="http://themes.pixelwars.org/editor-html/blog-single.html">Stay Calm And Surf</a></h1>
+                            </header>
+                            <!-- .entry-header -->
+                            
+                        </div></div><div class="owl-item" style="width: 474.333px; margin-right: 0px;"><div class="post-thumbnail" style="background-image:url(images/blog/05.jpg)">
+                                
+                            <!-- .entry-header -->
+                            <header class="entry-header">
+                                
+                                <!-- .entry-meta -->
+                                <div class="entry-meta">
+                                    <span class="cat-links">
+                                        <a href="http://themes.pixelwars.org/editor-html/?storefront=envato-elements#" rel="category tag">Fashion</a>
+                                    </span>	
+                                </div>
+                                <!-- .entry-meta -->
+                                
+                                <!-- .entry-title -->
+                                <h1 class="entry-title"><a href="http://themes.pixelwars.org/editor-html/blog-single.html">Becoming a Dragonfly</a></h1>
+                            </header>
+                            <!-- .entry-header -->
+                            
+                        </div></div><div class="owl-item cloned" style="width: 474.333px; margin-right: 0px;"><div class="post-thumbnail" style="background-image:url(images/blog/01.jpg)">
+                                
+                            <!-- .entry-header -->
+                            <header class="entry-header">
+                                
+                                <!-- .entry-meta -->
+                                <div class="entry-meta">
+                                    <span class="cat-links">
+                                        <a href="http://themes.pixelwars.org/editor-html/?storefront=envato-elements#" rel="category tag">TRAVEL</a>
+                                    </span>	
+                                </div>
+                                <!-- .entry-meta -->
+                                
+                                <!-- .entry-title -->
+                                <h1 class="entry-title"><a href="http://themes.pixelwars.org/editor-html/blog-single.html">There's always light at the end of the tunnel</a></h1>
+                            </header>
+                            <!-- .entry-header -->
+                            
+                        </div></div><div class="owl-item cloned" style="width: 474.333px; margin-right: 0px;"><div class="post-thumbnail" style="background-image:url(images/blog/02.jpg)">
+                                
+                            <!-- .entry-header -->
+                            <header class="entry-header">
+                                
+                                <!-- .entry-meta -->
+                                <div class="entry-meta">
+                                    <span class="cat-links">
+                                        <a href="http://themes.pixelwars.org/editor-html/?storefront=envato-elements#" rel="category tag">Life</a>
+                                    </span>	
+                                </div>
+                                <!-- .entry-meta -->
+                                
+                                <!-- .entry-title -->
+                                <h1 class="entry-title"><a href="http://themes.pixelwars.org/editor-html/blog-single.html">The Life of Stuff</a></h1>
+                            </header>
+                            <!-- .entry-header -->
+                            
+                        </div></div><div class="owl-item cloned" style="width: 474.333px; margin-right: 0px;"><div class="post-thumbnail" style="background-image:url(images/blog/03.jpg)">
+                                
+                            <!-- .entry-header -->
+                            <header class="entry-header">
+                                
+                                <!-- .entry-meta -->
+                                <div class="entry-meta">
+                                    <span class="cat-links">
+                                        <a href="http://themes.pixelwars.org/editor-html/?storefront=envato-elements#" rel="category tag">Nature</a>
+                                    </span>	
+                                </div>
+                                <!-- .entry-meta -->
+                                
+                                <!-- .entry-title -->
+                                <h1 class="entry-title"><a href="http://themes.pixelwars.org/editor-html/blog-single.html">Cuckoo Events</a></h1>
+                            </header>
+                            <!-- .entry-header -->
+                            
+                        </div></div></div></div><div class="owl-controls"><div class="owl-nav"><div class="owl-prev" style="">prev</div><div class="owl-next" style="">next</div></div><div class="owl-dots" style="display: none;"></div></div></div>
+                    <!-- post-slider -->
+                    
+                    
+                    
+					
+					<!-- InstanceEndEditable -->
+                	
+                    
+                    
+                    <!-- layout-fixed -->
+                	<div class="layout-fixed">
+                    
+                    
+                    
+						<!-- InstanceBeginEditable name="LayoutFixedContent" -->
+                
+                	
+                        <!-- blog-regular -->
+                        <div class="blog-regular">
+                    	
+                        
+                        	
+                            <!-- .hentry -->
+                            <article class="hentry post">
+                            
+                                <!-- .entry-header -->
+                                <header class="entry-header">
+                                    
+                                    
+                                    <!-- .entry-title -->
+                                    <h1 class="entry-title"><a href="http://themes.pixelwars.org/editor-html/blog-single.html">Runaway A Road Adventure</a></h1>
+                                    
+                                    <!-- .entry-meta -->
+                                    <div class="entry-meta">
+                                        <span class="entry-date">
+                                        	<time class="entry-date" datetime="2014-07-13T04:34:10+00:00">April 13, 2015</time>
+                                        </span> 
+                                        <span class="comment-link">
+                                            <a href="http://themes.pixelwars.org/editor-html/blog-single.html#comments">7 Comments</a>
+                                        </span>
+                                        <span class="read-time"><span class="eta">3 min</span> read</span>
+                                        <span class="cat-links">
+                                            <a href="http://themes.pixelwars.org/editor-html/?storefront=envato-elements#" title="View all posts in Travel" rel="category tag">Travel</a>
+                                        </span>	
+                                        <!--<span class="edit-link">
+                                        	<a class="post-edit-link" href="#">Edit</a>
+                                        </span>-->
+                                    </div>
+                                    <!-- .entry-meta -->
+                                    
+                                </header>
+                                <!-- .entry-header -->
+                                
+                                <!-- .featured-image -->
+                                <div class="featured-image">
+                                    <a href="http://themes.pixelwars.org/editor-html/blog-single.html">
+                                    	<img src="./Editor - a wordpress blog_files/06.jpg" alt="blog-image">
+                                    </a>
+                                </div>
+                                <!-- .featured-image -->
+                                
+                                <!-- .entry-content -->
+                                <div class="entry-content">
+                                	
+                                    <p>We circled for some time without doing much damage on either side; the long, straight, needle-like swords flashing in the sunlight, and ringing out upon the stillness as they crashed together with each effective parry.  </p>                                  
+                                	<p>I was only partially successful, as a sharp pain in my left shoulder attested, but in the sweep of my glance as I sought to again locate my adversary, a sight met my astonished gaze which paid me well for the wound the temporary blindness had caused me. 
+                                        <span class="more">
+                                            <a href="http://themes.pixelwars.org/editor-html/blog-single.html" class="more-link">Continue reading <span class="meta-nav">→</span></a>
+                                        </span>
+                                    </p>
+                                   
+                                </div>
+                                <!-- .entry-content -->
+                                
+                            </article>
+                            <!-- .hentry -->
+                            
+                            
+                            
+                            <!-- .hentry -->
+                            <article class="hentry post sticky">
+                            
+                                
+                                <!-- .entry-header -->
+                                <header class="entry-header">
+                                    
+                                    <!-- .entry-title -->
+                                    <h1 class="entry-title"><a href="http://themes.pixelwars.org/editor-html/blog-single-with-sidebar.html">All In Our Head</a></h1>
+                                    
+                                    
+                                    <!-- .entry-meta -->
+                                    <div class="entry-meta">
+                                        <span class="entry-date">
+                                            <time class="entry-date" datetime="2014-07-13T04:34:10+00:00">June 7, 2014</time>
+                                        </span> 
+                                        <span class="comment-link">
+                                            <a href="http://themes.pixelwars.org/editor-html/blog-single.html#comments">64 Comments</a>
+                                        </span>
+                                        <span class="read-time"><span class="eta">3 min</span> read</span>
+                                        <span class="cat-links">
+                                            <a href="http://themes.pixelwars.org/editor-html/?storefront=envato-elements#" title="View all posts in Adventure" rel="category tag">Adventure</a>
+                                        </span>	
+                                    </div>
+                                    <!-- .entry-meta -->
+                                    
+                                </header>
+                                 <!-- .entry-header -->
+                                
+                                <!-- .featured-image -->
+                                <div class="featured-image">
+                                    <a href="http://themes.pixelwars.org/editor-html/blog-single.html">
+                                    	<img src="./Editor - a wordpress blog_files/07.jpg" alt="blog-image">
+                                    </a>
+                                </div>
+                                <!-- .featured-image -->
+                                
+                                                                
+                                <!-- .entry-content -->
+                                <div class="entry-content">
+                                	
+                                    <p>It's just like the story of the grasshopper and the octopus. All year long, the grasshopper kept burying acorns for winter, while the octopus mooched off his girlfriend and watched TV. Also he got a race car. Is any of this getting through to you? I wish! It's a nickel. Okay, it's 500 dollars, you have no choice of carrier, the battery can't hold the charge and the reception isn't very…
+                                        <span class="more">
+                                            <a href="http://themes.pixelwars.org/editor-html/blog-single-with-sidebar.html" class="more-link">Continue reading <span class="meta-nav">→</span></a>
+                                        </span>
+                                    </p>
+                                   
+                                </div>
+                                <!-- .entry-content -->
+                                
+                                
+                            </article>
+                            <!-- .hentry -->
+                            
+                            
+                            <!-- .hentry -->
+                            <article class="hentry post">
+                            
+                                
+                                <!-- .entry-header -->
+                                <header class="entry-header">
+                                    
+                                    <!-- .entry-title -->
+                                    <h1 class="entry-title"><a href="http://themes.pixelwars.org/editor-html/blog-single.html">Smaller Plate</a></h1>
+                                    
+                                    <!-- .entry-meta -->
+                                    <div class="entry-meta">
+                                        <span class="entry-date">
+                                            <time class="entry-date" datetime="2014-07-13T04:34:10+00:00">June 7, 2014</time>
+                                        </span> 
+                                        <span class="comment-link">
+                                            <a href="http://themes.pixelwars.org/editor-html/blog-single.html#comments">124 Comments</a>
+                                        </span>
+                                        <span class="read-time"><span class="eta">3 min</span> read</span>
+                                        <span class="cat-links">
+                                            <a href="http://themes.pixelwars.org/editor-html/?storefront=envato-elements#" title="View all posts in Adventure" rel="category tag">LIFE</a>
+                                        </span>	
+                                    </div>
+                                    <!-- .entry-meta -->
+                                    
+                                </header>
+                                <!-- .entry-header -->
+                                
+                                <!-- .featured-image -->
+                                <div class="featured-image">
+                                    <a href="http://themes.pixelwars.org/editor-html/blog-single.html">
+                                    	<img src="./Editor - a wordpress blog_files/08.jpg" alt="blog-image">
+                                    </a>
+                                </div>
+                                <!-- .featured-image -->
+                                
+                                <!-- .entry-content -->
+                                <div class="entry-content">
+                                	
+                                    <p>Oh God, what have I done? All I want is to be a monkey of moderate intelligence who wears a suit… that's why I'm transferring to business school! Perhaps, but perhaps your civilization is merely the sewer of an even greater society above you!</p>
+                                    
+									<p>Tell her you just want to talk. It has nothing to do with mating. You're going to do his laundry? They're like sex, except I'm having them! I daresay that Fry has discovered the smelliest object in the known universe! 
+                                    
+                                        <span class="more">
+                                            <a href="http://themes.pixelwars.org/editor-html/blog-single.html" class="more-link">Continue reading <span class="meta-nav">→</span></a>
+                                        </span>
+                                    </p>
+                                   
+                                </div>
+                                <!-- .entry-content -->
+                                
+                            </article>
+                            <!-- .hentry -->
+                            
+                            
+                            
+                            <!-- .hentry -->
+                            <article class="hentry post format-video">
+                            
+                                <!-- .entry-header -->
+                                <header class="entry-header">
+                                    
+                                    <!-- .entry-title -->
+                                    <h1 class="entry-title"><a href="http://themes.pixelwars.org/editor-html/blog-single.html">Scrap Surf</a></h1>
+                                    
+                                    <!-- .entry-meta -->
+                                    <div class="entry-meta">
+                                        <span class="entry-date">
+                                            <time class="entry-date" datetime="2014-07-13T04:34:10+00:00">June 7, 2014</time>
+                                        </span> 
+                                        <span class="comment-link">
+                                            <a href="http://themes.pixelwars.org/editor-html/blog-single.html#comments">21 Comments</a>
+                                        </span>
+                                        <span class="read-time"><span class="eta">3 min</span> read</span>
+                                        <span class="cat-links">
+                                            <a href="http://themes.pixelwars.org/editor-html/?storefront=envato-elements#" title="View all posts in Adventure" rel="category tag">Street</a>
+                                        </span>	
+                                    </div>
+                                    <!-- .entry-meta -->
+                                    
+                                </header>
+                                 <!-- .entry-header -->
+                                
+                                
+                                <!-- .entry-content -->  
+                                <div class="entry-content">
+                                    
+                                    
+                                   	 <div class="fluid-width-video-wrapper" style="padding-top: 56.25%;"><iframe src="./Editor - a wordpress blog_files/50315573.html" id="fitvid550023"></iframe></div>
+                                    
+                                    <p>You don't know how to do any of those. It's a T. It goes "tuh". Okay, I like a challenge. Son, as your lawyer, I declare y'all are in a 12-piece bucket o' trouble. But I done struck you a deal: Five hours of community service cleanin' up that ol' mess you caused. I feel like I was mauled by Jesus. Tell her you just want to talk. It has nothing to do with mating.
+                                    </p>
+                                    
+                                </div>
+                                <!-- .entry-content -->
+                                
+                            </article>
+                            <!-- .hentry -->
+                            
+                            
+                            
+                            <!-- .hentry -->
+                            <article class="hentry post format-audio">
+                            
+                                <!-- .entry-header -->
+                                <header class="entry-header">
+                                    
+                                    <!-- .entry-title -->
+                                    <h1 class="entry-title"><a href="http://themes.pixelwars.org/editor-html/blog-single.html">Alice On The Roof</a></h1>
+                                    
+                                    <!-- .entry-meta -->
+                                    <div class="entry-meta">
+                                        <span class="entry-date">
+                                            <time class="entry-date" datetime="2014-07-13T04:34:10+00:00">June 7, 2014</time>
+                                        </span> 
+                                        <span class="comment-link">
+                                            <a href="http://themes.pixelwars.org/editor-html/blog-single.html#comments">98 Comments</a>
+                                        </span>
+                                        <span class="read-time"><span class="eta">3 min</span> read</span>
+                                        <span class="cat-links">
+                                            <a href="http://themes.pixelwars.org/editor-html/?storefront=envato-elements#" title="View all posts in Music" rel="category tag">Music</a>,
+                                            <a href="http://themes.pixelwars.org/editor-html/?storefront=envato-elements#" title="View all posts in Rythm" rel="category tag">Rythm</a>
+                                        </span>	
+                                    </div>
+                                    <!-- .entry-meta -->
+                                    
+                                </header>
+                                <!-- .entry-header -->
+                                
+                                <!-- .entry-content -->  
+                                <div class="entry-content">
+                                    
+                                    
+                                    <iframe height="166" src="./Editor - a wordpress blog_files/saved_resource.html"></iframe>
+                                    
+                                    <p>I'm sorry, guys. I never meant to hurt you. Just to destroy everything you ever believed in. You don't know how to do any of those. But existing is basically all I do! No, she'll probably make me do it. Meh.
+                                    </p>
+                                    
+                                </div>
+                                <!-- .entry-content -->
+                                
+                            </article>
+                            <!-- .hentry -->
+                            
+                            
+                            
+                                                        
+                            <!-- .hentry -->
+                            <article class="hentry post format-gallery">
+                            
+                                <!-- .entry-header -->
+                                <header class="entry-header">
+                                                                        
+                                    <!-- .entry-title -->
+                                    <h1 class="entry-title"><a href="http://themes.pixelwars.org/editor-html/blog-single.html">Well It's The Time</a></h1>
+                                    
+                                    <!-- .entry-meta -->
+                                    <div class="entry-meta">
+                                        <span class="entry-date">
+                                            <time class="entry-date" datetime="2014-07-13T04:34:10+00:00">June 7, 2014</time>
+                                        </span> 
+                                        <span class="comment-link">
+                                            <a href="http://themes.pixelwars.org/editor-html/blog-single.html#comments">34 Comments</a>
+                                        </span>
+                                        <span class="read-time"><span class="eta">3 min</span> read</span>
+                                        <span class="cat-links">
+                                            <a href="http://themes.pixelwars.org/editor-html/?storefront=envato-elements#" title="View all posts in Life" rel="category tag">Life</a>
+                                        </span>	
+                                    </div>
+                                    <!-- .entry-meta -->
+                                    
+                                </header>
+                                <!-- .entry-header -->
+                                
+                                <!-- .entry-content -->  
+                                <div class="entry-content">
+                                    
+                                    <!-- .owl-carousel --> 
+                                    <div class="owl-carousel owl-theme owl-loaded" data-items="1" data-loop="false" data-center="false" data-mouse-drag="true" data-nav="true" data-dots="true" data-autoplay="false" data-autoplay-speed="600" data-autoplay-timeout="2000" data-nav-prev-text="prev" data-nav-next-text="next">
+                                    	
+                                        
+                                        
+                                        
+                                        
+                                        
+                                    
+                                    <div class="owl-stage-outer"><div class="owl-stage" style="transform: translate3d(0px, 0px, 0px); transition: all 0s ease 0s; width: 2220px;"><div class="owl-item active" style="width: 740px; margin-right: 0px;"><div>
+                                            <img src="./Editor - a wordpress blog_files/slide-01.jpg" alt="slide">
+                                        </div></div><div class="owl-item" style="width: 740px; margin-right: 0px;"><div>
+                                            <img src="./Editor - a wordpress blog_files/slide-02.jpg" alt="slide">
+                                        </div></div><div class="owl-item" style="width: 740px; margin-right: 0px;"><div>
+                                            <img src="./Editor - a wordpress blog_files/slide-03.jpg" alt="slide">
+                                            <p class="owl-title">memories last forever.</p>
+                                        </div></div></div></div><div class="owl-controls"><div class="owl-nav"><div class="owl-prev" style="">prev</div><div class="owl-next" style="">next</div></div><div class="owl-dots" style=""><div class="owl-dot active"><span></span></div><div class="owl-dot"><span></span></div><div class="owl-dot"><span></span></div></div></div></div>
+                                    <!-- .owl-carousel --> 
+                                    
+                                    <p>I wish! It's a nickel. I'm sorry, guys. I never meant to hurt you. Just to destroy everything you ever believed in. Oh, but you can. But you may have to metaphorically make a deal with the devil. And by "devil", I mean Robot Devil. And by "metaphorically", I mean get your coat. Also Zoidberg.
+                                    </p>
+                                    
+                                </div>
+                                <!-- .entry-content -->  
+                                
+                            </article>
+                            <!-- .hentry -->
+                            
+                            
+                            <!-- .hentry -->
+                            <article class="hentry post format-gallery">
+                            
+                                <!-- .entry-header -->
+                                <header class="entry-header">
+                                    
+                                    <!-- .entry-title -->
+                                    <h1 class="entry-title"><a href="http://themes.pixelwars.org/editor-html/blog-single.html">Finding Perfect Spot For Surfing</a></h1>
+                                    
+                                    <!-- .entry-meta -->
+                                    <div class="entry-meta">
+                                        <span class="entry-date">
+                                            <time class="entry-date" datetime="2014-07-13T04:34:10+00:00">June 7, 2014</time>
+                                        </span> 
+                                        <span class="comment-link">
+                                            <a href="http://themes.pixelwars.org/editor-html/blog-single.html#comments">83 Comments</a>
+                                        </span>
+                                        <span class="read-time"><span class="eta">3 min</span> read</span>
+                                        <span class="cat-links">
+                                            <a href="http://themes.pixelwars.org/editor-html/?storefront=envato-elements#" title="View all posts in Life" rel="category tag">Life</a>
+                                        </span>	
+                                    </div>
+                                    <!-- .entry-meta -->
+                                    
+                                </header>
+                                <!-- .entry-header -->
+                                
+                                <!-- .entry-content -->  
+                                <div class="entry-content">
+                                    
+                                    <!-- .gallery -->
+                                    <div class="gallery gallery-columns-3 gallery-size-thumbnail">
+                                    
+                                    	<figure class="gallery-item">
+                                            <div class="gallery-icon landscape">
+                                                <a href="http://themes.pixelwars.org/editor-html/images/blog/slide-01-big.jpg" class="fluidbox"><div class="fluidbox-wrap" style="z-index: 990;"><img width="150" height="150" src="./Editor - a wordpress blog_files/slide-01.jpg" class="attachment-thumbnail" alt="Golden Gate Bridge" style="opacity: 1;"><div class="fluidbox-ghost" style="width: 244px; height: 163px; top: 0px; left: 0px;"></div></div></a>
+                                            </div>
+                                       </figure>
+                                           
+                                       <figure class="gallery-item">
+                                            <div class="gallery-icon landscape">
+                                                <a href="http://themes.pixelwars.org/editor-html/images/blog/slide-02-big.jpg" class="fluidbox"><div class="fluidbox-wrap" style="z-index: 990;"><img width="150" height="150" src="./Editor - a wordpress blog_files/slide-02.jpg" class="attachment-thumbnail" alt="Golden Gate Bridge" style="opacity: 1;"><div class="fluidbox-ghost" style="width: 244px; height: 163px; top: 0px; left: 0px;"></div></div></a>
+                                            </div>
+                                       </figure>
+                                       
+                                       <figure class="gallery-item">
+                                            <div class="gallery-icon landscape">
+                                                <a href="http://themes.pixelwars.org/editor-html/images/blog/slide-03-big.jpg" class="fluidbox"><div class="fluidbox-wrap" style="z-index: 990;"><img width="150" height="150" src="./Editor - a wordpress blog_files/slide-03.jpg" class="attachment-thumbnail" alt="Golden Gate Bridge" style="opacity: 1;"><div class="fluidbox-ghost" style="width: 244px; height: 163px; top: 0px; left: 0px;"></div></div></a>
+                                            </div>
+                                            <figcaption class="wp-caption-text gallery-caption">
+                                                Surfing Spot
+                                           </figcaption>
+                                       </figure>
+                                           
+                                    </div>
+                                    <!-- .gallery -->
+                                    
+                                    <p>It may comfort you to know that Fry's death took only fifteen seconds, yet the pain was so intense, that it felt to him like fifteen years.</p>
+                                    
+                                </div>
+                                <!-- .entry-content -->
+                                
+                            </article>
+                            <!-- .hentry -->
+                            
+                            
+                            
+                            
+                            <!-- .hentry -->
+                            <!--<article class="hentry post format-image">
+                            
+                                
+                                
+                                <header class="entry-header">
+                                    
+                                    
+                                    <h1 class="entry-title"><a href="blog-single.html" title="Adaptive Vs. Responsive Layouts And Optimal Text Readability">This is an image post!</a></h1>
+                                    
+                                    
+                                    
+                                    <div class="entry-meta">
+                                        <span class="entry-date">
+                                            <time class="entry-date" datetime="2014-07-13T04:34:10+00:00">June 7, 2014</time>
+                                        </span> 
+                                        <span class="comment-link">
+                                            <a href="blog-single.html#comments">83 Comments</a>
+                                        </span>
+                                        <span class="read-time"><span class="eta"></span> read</span>
+                                        <span class="cat-links">
+                                            <a href="#" title="View all posts in Adventure" rel="category tag">Street</a>
+                                        </span>	
+                                    </div>
+                                    
+                                    
+                                </header>
+                                
+                                
+                                
+                                 
+                                <div class="entry-content">
+                                    
+                                    <p>
+                                    	<img src="images/blog/slide-03.jpg" alt="image">	
+                                    </p>
+                                    
+                                    <p>This is a text of an image post format.</a></p>
+                                    
+                                </div>
+                                
+                                
+                                
+                            </article>-->
+                            <!-- .hentry -->
+                            
+                            
+                            
+                            
+                            <!-- .hentry -->
+                            <!--<article class="hentry post format-link">
+                            
+                                <header class="entry-header">
+                                    
+                                    
+                                    <h1 class="entry-title"><a href="blog-single-audio-embed.html" title="Link">Format Link</a></h1>
+                                    
+                                   
+                                    <div class="entry-meta">
+                                        <span class="entry-date">
+                                            <time class="entry-date" datetime="2014-07-13T04:34:10+00:00">June 7, 2014</time>
+                                        </span> 
+                                        <span class="comment-link">
+                                            <a href="blog-single.html#comments">83 Comments</a>
+                                        </span>
+                                        <span class="read-time"><span class="eta"></span> read</span>
+                                        <span class="cat-links">
+                                            <a href="#" title="View all posts in Music" rel="category tag">Music</a>
+                                        </span>	
+                                    </div>
+                                    
+                                    
+                                </header>
+                                
+                                
+                                <div class="entry-content">
+                                    <p>
+                                        <a title="smashing magazine" href="http://www.smashingmagazine.com/" target="_blank">Smashing Magazine</a>
+                                    </p>
+                                    <p>You should definetly visit this site, lots of useful stuff for web designers!</p>
+                                </div>
+                                
+                                
+                            </article>-->
+                            
+                            
+                            
+                            
+                            
+                            
+                            <!-- .hentry -->
+                            <!--<article class="hentry post format-chat">
+                            
+                                <header class="entry-header">
+                                    
+                                    
+                                    <h1 class="entry-title"><a href="blog-single-audio-embed.html" title="Chat">Just A Little Chat</a></h1>
+                                    
+                                    <div class="entry-meta">
+                                        <span class="entry-date">
+                                            <time class="entry-date" datetime="2014-07-13T04:34:10+00:00">June 7, 2014</time>
+                                        </span> 
+                                        <span class="comment-link">
+                                            <a href="blog-single.html#comments">83 Comments</a>
+                                        </span>
+                                        <span class="read-time"><span class="eta"></span> read</span>
+                                        <span class="cat-links">
+                                            <a href="#" title="View all posts in Music" rel="category tag">Music</a>
+                                        </span>	
+                                    </div>
+                                    
+                                </header>
+                                
+                                
+                                <div class="entry-content">
+                                    
+                                    <div class="chat-transcript">
+                                        
+                                        <div class="chat-row chat-speaker-1">
+                                            <div class="chat-author"><cite class="fn">John</cite></div>
+                                            <div class="chat-text"><p>Hey there</p></div>
+                                        </div>
+                                        
+                                        <div class="chat-row chat-speaker-2">
+                                            <div class="chat-author"><cite class="fn">Mary</cite></div>
+                                            <div class="chat-text"><p>Aye, matey!</p></div>
+                                        </div>
+                                        
+                                        <div class="chat-row chat-speaker-1">
+                                            <div class="chat-author"><cite class="fn">John</cite></div>
+                                            <div class="chat-text"><p>Huh?</p></div>
+                                        </div>
+                                        
+                                    </div>
+                                    
+                                </div>
+                                
+                            </article>-->
+                            
+                            
+                            
+                            
+                            
+                            <!-- .hentry -->
+                            <!--<article class="hentry post format-status">
+                            
+                                <header class="entry-header">
+                                    
+                                    
+                                    <h1 class="entry-title"><a href="blog-single-audio-embed.html" title="Chat">Status Post</a></h1>
+                                    
+                                    <div class="entry-meta">
+                                        <span class="entry-date">
+                                            <time class="entry-date" datetime="2014-07-13T04:34:10+00:00">June 7, 2014</time>
+                                        </span> 
+                                        <span class="comment-link">
+                                            <a href="blog-single.html#comments">83 Comments</a>
+                                        </span>
+                                        <span class="read-time"><span class="eta"></span> read</span>
+                                        <span class="cat-links">
+                                            <a href="#" title="View all posts in Music" rel="category tag">Music</a>
+                                        </span>	
+                                    </div>
+                                    
+                                </header>
+                                
+                                
+                                <div class="entry-content">
+                                    
+                                    <p>I am having good time with my friends at Starbucks, classic!</p>
+                                    
+                                </div>
+                                
+                            </article>-->
+                            
+                            
+                            
+                            
+                            
+                            <!-- .hentry -->
+                            <!--<article class="hentry post format-aside">
+                            
+                                <header class="entry-header">
+                                    
+                                    
+                                    <h1 class="entry-title"><a href="blog-single-audio-embed.html" title="Chat">Aside Post Format</a></h1>
+                                    
+                                    <div class="entry-meta">
+                                        <span class="entry-date">
+                                            <time class="entry-date" datetime="2014-07-13T04:34:10+00:00">June 7, 2014</time>
+                                        </span> 
+                                        <span class="comment-link">
+                                            <a href="blog-single.html#comments">83 Comments</a>
+                                        </span>
+                                        <span class="read-time"><span class="eta"></span> read</span>
+                                        <span class="cat-links">
+                                            <a href="#" title="View all posts in Music" rel="category tag">Music</a>
+                                        </span>	
+                                    </div>
+                                    
+                                </header>
+                                
+                                
+                                <div class="entry-content">
+                                    
+                                    <h4>A Story About Nothing</h4>
+                                    <p>Responsive web design offers us a way forward, finally allowing us to design for the ebb and flow of things.There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words.
+                                    </p>
+                               
+                                    
+                                </div>
+                                
+                            </article>-->
+                            
+                            
+                            
+                            
+                            
+                            
+                            <!-- .hentry -->
+                            <article class="hentry post format-quote">
+                            
+                                <header class="entry-header">
+                                    
+                                    <h1 class="entry-title"><a href="http://themes.pixelwars.org/editor-html/blog-single.html">Post Format Quote</a></h1>
+                                    
+                                    <div class="entry-meta">
+                                        <span class="entry-date">
+                                            <time class="entry-date" datetime="2014-07-13T04:34:10+00:00">June 7, 2014</time>
+                                        </span> 
+                                        <span class="comment-link">
+                                            124 Comments
+                                        </span>
+                                        <span class="read-time"><span class="eta">3 min</span> read</span>
+                                        <span class="cat-links">
+                                            <a href="http://themes.pixelwars.org/editor-html/?storefront=envato-elements#" title="View all posts in Quote" rel="category tag">Quote</a>
+                                        </span>	
+                                    </div>
+                                    
+                                </header>
+                                
+                                <div class="entry-content">
+                                    
+                                    <blockquote>A problem is a chance for you to do your best.
+                                        <cite>Duke Ellington</cite>
+                                    </blockquote>
+                                    
+                                </div>
+                                
+                            </article>
+                            <!-- .hentry -->
+                            
+                            
+                            <!-- post nav -->
+                            <nav class="navigation" role="navigation">
+                                <div class="nav-previous"><a href="http://themes.pixelwars.org/editor-html/?storefront=envato-elements#"><span class="meta-nav">←</span> Older posts</a></div>
+                                <!--<div class="nav-next"><a href="#">Newer posts <span class="meta-nav">→</span></a></div>-->
+                            </nav>
+                            <!-- post nav -->
+                            
+                            
+                            
+                        </div>
+                        <!-- blog-regular -->
+                    
+                    
+                
+                		<!-- InstanceEndEditable -->
+                    	
+                        
+                    	
+                    </div>
+                    <!-- layout-fixed -->
+                
+                
+                	
+                
+                </div>
+                <!-- site-content -->
+                
+            </div>
+            <!-- primary -->    
+        
+        
+        
+        
+        </div>
+        <!-- site-main -->
+        
+        
+        <!-- site-footer -->
+        <footer id="colophon" class="site-footer" role="contentinfo">
+			
+            <!-- layout-medium -->
+            <div class="layout-medium">
+            	
+                <!-- footer-social -->
+                <div class="footer-social">
+                	
+                    <ul class="social">
+                        <li><a class="facebook" href="http://themes.pixelwars.org/editor-html/?storefront=envato-elements#"></a></li>
+                        <li><a class="twitter" href="http://themes.pixelwars.org/editor-html/?storefront=envato-elements#"></a></li>
+                        <li><a class="google-plus" href="http://themes.pixelwars.org/editor-html/?storefront=envato-elements#"></a></li>
+                        <li><a class="dribbble" href="http://themes.pixelwars.org/editor-html/?storefront=envato-elements#"></a></li>
+                        <li><a class="instagram" href="http://themes.pixelwars.org/editor-html/?storefront=envato-elements#"></a></li>
+                        <li><a class="vine" href="http://themes.pixelwars.org/editor-html/?storefront=envato-elements#"></a></li>
+                    </ul>
+                    
+                </div>
+                <!-- footer-social -->
+            	
+                <!-- footer-sidebar -->
+                <div class="footer-sidebar widget-area" role="complementary">
+    
+                    <!-- widget -->
+                    <aside class="widget widget_text">
+                      <h3 class="widget-title">About Me</h3>
+                      <div class="textwidget">
+                        <img src="./Editor - a wordpress blog_files/about-small.jpg" alt="avatar"> <p>Hello. I am a freelance writer. I live in a small town somewhere in the world.</p>
+                      </div>
+                    </aside>
+                    <!-- widget -->        
+               
+               		<!-- widget --> 
+                    <aside class="widget widget_tag_cloud">
+                      <h3 class="widget-title">Tags</h3>
+                      <div class="tagcloud"> <a href="http://themes.pixelwars.org/editor-html/?storefront=envato-elements#" title="1 topic" style="font-size: 8pt;">adaptive</a> <a href="http://themes.pixelwars.org/editor-html/?storefront=envato-elements#" title="2 topics" style="font-size: 22pt;">design</a> <a href="http://themes.pixelwars.org/editor-html/?storefront=envato-elements#" title="1 topic" style="font-size: 8pt;">html</a> <a href="http://themes.pixelwars.org/editor-html/?storefront=envato-elements#" title="2 topics" style="font-size: 22pt;">responsive</a> <a href="http://themes.pixelwars.org/editor-html/?storefront=envato-elements#" title="2 topics" style="font-size: 22pt;">think</a> <a href="http://themes.pixelwars.org/editor-html/?storefront=envato-elements#" title="1 topic" style="font-size: 8pt;">web design</a> <a href="http://themes.pixelwars.org/editor-html/?storefront=envato-elements#" title="1 topic" style="font-size: 8pt;">css</a> <a href="http://themes.pixelwars.org/editor-html/?storefront=envato-elements#" title="2 topics" style="font-size: 22pt;">animations</a> <a href="http://themes.pixelwars.org/editor-html/?storefront=envato-elements#" title="1 topic" style="font-size: 8pt;">layout</a> <a href="http://themes.pixelwars.org/editor-html/?storefront=envato-elements#" title="2 topics" style="font-size: 14pt;">mobile</a> <a href="http://themes.pixelwars.org/editor-html/?storefront=envato-elements#" title="2 topics" style="font-size: 22pt;">think</a> <a href="http://themes.pixelwars.org/editor-html/?storefront=envato-elements#" title="1 topic" style="font-size: 8pt;">typography</a> </div>
+                    </aside> 
+                    <!-- widget -->   
+                   
+                    <!-- widget : categories -->
+                    <aside class="widget widget_categories">
+                      <h3 class="widget-title">Categories</h3>
+                      <ul>
+                        <li class="cat-item"><a href="http://themes.pixelwars.org/editor-html/?storefront=envato-elements#" title="View all posts filed under Nature">Nature</a></li>
+                        <li class="cat-item"><a href="http://themes.pixelwars.org/editor-html/?storefront=envato-elements#" title="View all posts filed under Life">Life</a></li>
+                        <li class="cat-item"><a href="http://themes.pixelwars.org/editor-html/?storefront=envato-elements#" title="View all posts filed under Adventure">Adventure</a></li>
+                        <li class="cat-item"><a href="http://themes.pixelwars.org/editor-html/?storefront=envato-elements#" title="View all posts filed under Freebies">Travel</a></li>
+                        <li class="cat-item"><a href="http://themes.pixelwars.org/editor-html/?storefront=envato-elements#" title="View all posts filed under Sport">Sport</a></li>
+                      </ul>
+                    </aside>
+                    <!-- widget : categories --> 
+                    
+                    
+                    <!-- widget --> 
+                    <aside class="widget widget_recent_entries">		
+                        <h3 class="widget-title">Recent Posts</h3>		
+                        <ul>
+                            <li><a href="http://themes.pixelwars.org/editor-html/?storefront=envato-elements#">Runaway A Road Adventure</a></li>
+                            <li><a href="http://themes.pixelwars.org/editor-html/?storefront=envato-elements#">All In Our Head</a></li>
+                            <li><a href="http://themes.pixelwars.org/editor-html/?storefront=envato-elements#">Smaller Plate</a></li>
+                            <li><a href="http://themes.pixelwars.org/editor-html/?storefront=envato-elements#">Alice On The Roof</a></li>
+                            <li><a href="http://themes.pixelwars.org/editor-html/?storefront=envato-elements#">Becoming A DragonFly</a></li>
+                        </ul>
+                    </aside> 
+                    <!-- widget --> 
+                    
+                    
+                </div>
+                <!-- footer-sidebar -->
+            
+            
+            </div>
+            <!-- layout-medium -->
+                
+                
+            <!-- .site-info -->
+            <div class="site-info">
+            	
+                <!-- layout-medium -->
+            	<div class="layout-medium">
+                
+            		<p>crafted with <i class="pw-icon-heart"></i> <em>by</em> Pixelwars</p>
+                
+                </div>
+            	<!-- layout-medium -->
+            
+            </div>
+            <!-- .site-info -->
+            
+            
+            
+		</footer>
+        <!-- site-footer -->
+
+        
+	</div>
+    <!-- page -->
+    
+    
+    <script src="./Editor - a wordpress blog_files/fastclick.js.download"></script>
+    <script src="./Editor - a wordpress blog_files/jquery.fitvids.js.download"></script>
+    <script src="./Editor - a wordpress blog_files/jquery.validate.min.js.download"></script>
+    <script src="./Editor - a wordpress blog_files/jquery.uniform.min.js.download"></script>
+    <script src="./Editor - a wordpress blog_files/imagesloaded.pkgd.min.js.download"></script>
+    <script src="./Editor - a wordpress blog_files/jquery.isotope.min.js.download"></script>
+    <script src="./Editor - a wordpress blog_files/jquery.magnific-popup.min.js.download"></script>
+    <script src="./Editor - a wordpress blog_files/jquery.fluidbox.min.js.download"></script>
+    <script src="./Editor - a wordpress blog_files/owl.carousel.min.js.download"></script>
+    <script src="./Editor - a wordpress blog_files/readingTime.js.download"></script>
+    <script src="./Editor - a wordpress blog_files/selection-sharer.js.download"></script>
+    <script src="./Editor - a wordpress blog_files/r-gallery.js.download"></script>
+    <script src="./Editor - a wordpress blog_files/main.js.download"></script>
+    
+
+
+
+<div id="forest-ext-shadow-host"></div></body><!-- InstanceEnd --></html>
