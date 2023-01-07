@@ -496,6 +496,8 @@
 	// WINDOW ONLOAD
 	window.onload = function() {
 		startIndexPage();
+	};
+	window.onload = function() {
 		hideLoginForm()
 	};
 	// WINDOW ONLOAD	
