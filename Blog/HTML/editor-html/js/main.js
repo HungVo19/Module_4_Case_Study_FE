@@ -496,7 +496,7 @@
 	// WINDOW ONLOAD
 	window.onload = function() {
 		startIndexPage();
-
+		hideLoginForm()
 	};
 	// WINDOW ONLOAD	
 	
@@ -590,6 +590,3 @@
 	// ------------------------------	
 	
 })(jQuery);
-
-
-
