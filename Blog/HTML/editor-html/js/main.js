@@ -494,9 +494,9 @@
 	
 	
 	// WINDOW ONLOAD
-	window.onload = function() {	
-		
-		
+	window.onload = function() {
+		startIndexPage();
+
 	};
 	// WINDOW ONLOAD	
 	
@@ -590,3 +590,6 @@
 	// ------------------------------	
 	
 })(jQuery);
+
+
+
