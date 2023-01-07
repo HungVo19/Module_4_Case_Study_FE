@@ -494,8 +494,8 @@
 	
 	
 	// WINDOW ONLOAD
-	window.onload = function() {	
-		
+	window.onload = function() {
+		hideLoginForm()
 		
 	};
 	// WINDOW ONLOAD	
