@@ -12,7 +12,6 @@ function showListUsers() {
         type: "GET",
         url: LOCAL_URL,
         success: function (data) {
-
             let count = 1;
             let content = `<thead>
                                     <tr>
