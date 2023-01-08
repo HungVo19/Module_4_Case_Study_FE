@@ -27,7 +27,7 @@ function registerUser() {
         data: JSON.stringify(newUser),
         datatype: 'json',
         url: "http://localhost:8080/register",
-        success: function (data) {
+        success: function(data) {
             alert("Registered")
             $("#dangKy-div").hide();
             $("#dangNhap-div").show();
