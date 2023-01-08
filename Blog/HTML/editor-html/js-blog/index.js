@@ -16,18 +16,35 @@ function checkLogin() {
                             <li><a href="login-register.html">Login/Register</a></li>
                         </ul>`
     } else {
-        content = `<img alt="" src="images/site/testo-02.jpg"
+        if (sessionStorage.getItem("userRole") === 1) {
+            content = `<img alt="" src="images/site/testo-02.jpg"
                              class="avatar avatar-44 photo"
                              height="35" width="35" style="border-radius: 50%">
                         <ul>
                             <li><a href="blog-simple.html">Profile</a></li>
-                            <li><a href="" onclick="test123()">Manage Post</a></li>
+                            <li><a href="" onclick="toUserPage()">Manage Post</a></li>
                             <li><a href="" onclick="logOut()">Logout</a></li>
                         </ul>`
+        } else {
+            content = `<img alt="" src="images/site/testo-03.jpg"
+                             class="avatar avatar-44 photo"
+                             height="35" width="35" style="border-radius: 50%">
+                        <ul>
+                            <li><a href="" onclick="toAdminPage()">Go to Admin Page</a></li>
+                            <li><a href="" onclick="logOut()">Logout</a></li>
+                        </ul>`
+        }
+
     }
     $("#checkLogin").html(content);
 }
-function test123() {
+
+function toAdminPage() {
+    event.preventDefault();
+    window.location.href = "../default/ltr/admin-user.html";
+}
+
+function toUserPage() {
     window.location.href = "../default/ltr/admin-blog-manager.html";
     event.preventDefault();
 }

@@ -60,6 +60,7 @@ function loginUser(username, pass) {
         url: "http://localhost:8080/login",
         success: function (data) {
             sessionStorage.setItem("userId", data.id);
+            sessionStorage.setItem("userRole", data.role.id)
             window.location.href = "index.html"
         },
         error: function (xhr) {
