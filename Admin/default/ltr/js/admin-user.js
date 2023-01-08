@@ -115,3 +115,8 @@ function showUsers(data) {
         document.getElementById("next").hidden = true
     }
 }
+
+function logoutBtn(){
+    sessionStorage.clear();
+    window.location.href = "../../../../Blog/HTML/editor-html/index.html"
+}
