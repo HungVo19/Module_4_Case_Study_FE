@@ -485,25 +485,30 @@
         // FULL WIDTH IMAGES
 		fullWidthImages();
 		// ------------------------------
-		
-		
-		
+
     });
     // DOCUMENT READY
-	
-	
-	
+
 	// WINDOW ONLOAD
-	window.onload = function() {
+	// window.onload = function() {
+	// 	startIndexPage();
+	// 	hideLoginForm()
+	//
+	// };
+	// window.onload = function() {
+	// 	hideLoginForm()
+	// };
+	// WINDOW ONLOAD
+
+	$(window).load(function() {
 		startIndexPage();
-	};
-	window.onload = function() {
-		hideLoginForm()
-	};
-	// WINDOW ONLOAD	
-	
-	
-	
+		// hideLoginForm();
+	})
+
+	// $(window).load(function() {
+	// 	hideLoginForm()
+	// })
+	//
 	
 	// ------------------------------
 	// ------------------------------

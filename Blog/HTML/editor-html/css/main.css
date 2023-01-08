@@ -71,7 +71,8 @@ button {
 	}
 /* HEADINGS */
 h1, h2, h3, h4, h5, h6, 
-.nav-menu, 
+.nav-menu,
+.nav-menu-avatar,
 .entry-meta, 
 .entry-header, 
 .navigation, 
@@ -380,6 +381,7 @@ div.uploader,
 .tagcloud a,
 .gallery-item .gallery-caption,
 .nav-menu ul li a,
+.nav-menu-avatar ul li a,
 .owl-theme .owl-nav [class*='owl-'],
 .owl-theme .owl-dots .owl-dot span {
     -webkit-transition: color 0.1s, opacity .2s, background-color .2s, border-color .2s; transition: color 0.1s, opacity .2s, background-color .2s, border-color .2s;
@@ -588,6 +590,31 @@ div.uploader,
 .nav-menu ul li a.selected {
 	color: #C9B69B; 
 	}
+
+.nav-menu-avatar {
+	display: block; text-align: center;
+}
+.nav-menu-avatar ul {
+	display: block; list-style:none; padding:0; margin:0; text-transform: uppercase;
+}
+.nav-menu-avatar ul li {
+	position:relative; display:block; padding: 0; margin:0; line-height: 1; font-size: 12px; font-weight: bold; cursor: default;
+}
+.nav-menu-avatar ul ul li {
+	font-weight: normal;
+}
+	.nav-menu-avatar ul li a {
+	display: block; padding: 0.9em 22px; border-bottom: 1px solid #f1f1f1;
+}
+.nav-menu-avatar ul li,
+.nav-menu-avatar ul li a {
+	color:#585858;
+}
+.nav-menu-avatar ul li a:hover,
+.nav-menu-avatar ul li:hover > a,
+.nav-menu-avatar ul li a.selected {
+	color: #C9B69B;
+}
 
 /* MOBILE MENU */
 @media screen and (max-width: 991px) {

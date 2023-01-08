@@ -1,6 +1,7 @@
 function hideLoginForm() {
     $('#dangNhap-div').hide();
-    event.defaultPrevented;
+    $('#dangKy-div').show();
+    event.preventDefault()
 }
 
 function registerUser() {
@@ -26,7 +27,7 @@ function registerUser() {
         data: JSON.stringify(newUser),
         datatype: 'json',
         url: "http://localhost:8080/register",
-        success: function(data) {
+        success: function (data) {
             alert("Registered")
             $("#dangKy-div").hide();
             $("#dangNhap-div").show();
@@ -57,11 +58,18 @@ function loginUser(username, pass) {
         data: JSON.stringify(newUser),
         datatype: 'json',
         url: "http://localhost:8080/login",
-        success: function(data) {
+        success: function (data) {
+            sessionStorage.setItem("userId", data.id);
             window.location.href = "index.html"
         },
         error: function (xhr) {
             alert(xhr.responseText);
         }
     });
+}
+
+function showLoginForm() {
+    $('#dangKy-div').hide();
+    $('#dangNhap-div').show();
+    event.preventDefault();
 }

@@ -41,7 +41,7 @@
 
 </head>
 
-<body onload="startIndexPage()">
+<body>
 
 <!-- page -->
 <div id="page" class="hfeed site">
@@ -67,9 +67,6 @@
                             <li><a href="blog-masonry-with-sidebar.html">Blog Masonry Sidebar</a></li>
                         </ul>
                         <!-- level 2 -->
-                    </li>
-                    <li><a href="portfolio.html">Portfolio</a></li>
-                    <li><a href="books.html">Books</a></li>
                     <li><a href="gallery.html">Gallery</a></li>
                     <li><a href="about.html">About Us</a>
                         <!-- level 2 -->
@@ -92,11 +89,17 @@
                         <!-- level 2 -->
                     </li>
                     <li><a href="contact.html">Contact</a></li>
+                    <li id="checkLogin">
+                    </li>
+
                 </ul>
             </div>
             <!-- nav-menu -->
 
-            <a class="search-toggle toggle-link"></a>
+            <!--                <a class="search-toggle toggle-link"></a>-->
+
+
+
 
             <!-- search-container -->
             <div class="search-container">
@@ -145,7 +148,7 @@
 
 
     <!-- site-main -->
-    <div id="main" class="site-main"> <!-- post-slider -->
+    <div id="main" class="site-main homePage"> <!-- post-slider -->
         <div class="post-slider owl-carousel" data-items="3" data-loop="true" data-dots="false"
              data-nav="true" data-nav-prev-text="prev" data-nav-next-text="next">
 
@@ -170,7 +173,6 @@
                 <!-- .entry-header -->
 
             </div>
-            <!-- post -->
 
             <!-- post -->
             <div class="post-thumbnail" style="background-image:url(images/blog/02.jpg)">
@@ -277,9 +279,9 @@
                         <div id="data-table"></div>
 
                         <!-- post nav -->
-                        <nav class="navigation" role="navigation" >
+                        <nav class="navigation" role="navigation">
                             <div class="nav-previous" id="getMorePosts"></div>
-<!--                            <div class="nav-next"><a href="#">Newer posts <span class="meta-nav">→</span></a></div>-->
+                            <!--                            <div class="nav-next"><a href="#">Newer posts <span class="meta-nav">→</span></a></div>-->
                         </nav>
                         <!-- post nav -->
 
@@ -500,16 +502,17 @@
                 <aside class="widget eemail_widget">
                     <h3 class="widget-title">Email newsletter</h3>
                     <div>
-                      <div class="eemail_caption">Subscribe your email</div>
-                      <div class="eemail_msg">
-                        <span style="display:none" id="eemail_msg">Subscribed successfully.</span>
-                      </div>
-                      <div class="eemail_textbox">
-                        <input class="eemail_textbox_class" id="eemail_txt_email" placeholder="Enter email" maxlength="150" type="text">
-                      </div>
+                        <div class="eemail_caption">Subscribe your email</div>
+                        <div class="eemail_msg">
+                            <span style="display:none" id="eemail_msg">Subscribed successfully.</span>
+                        </div>
+                        <div class="eemail_textbox">
+                            <input class="eemail_textbox_class" id="eemail_txt_email" placeholder="Enter email"
+                                   maxlength="150" type="text">
+                        </div>
                         <div class="eemail_button">
-                        <input class="eemail_textbox_button" id="eemail_txt_Button" value="Submit" type="button">
-                      </div>
+                            <input class="eemail_textbox_button" id="eemail_txt_Button" value="Submit" type="button">
+                        </div>
                     </div>
                 </aside>
                 <!-- widget : newsletter -->
@@ -545,6 +548,10 @@
 </div>
 <!-- page -->
 
+
+<!--show Login/Register Page-->
+
+
 <script src="js/fastclick.js"></script>
 <script src="js/jquery.fitvids.js"></script>
 <script src="js/jquery.validate.min.js"></script>
@@ -558,7 +565,7 @@
 <script src="js/selection-sharer/selection-sharer.js"></script>
 <script src="js/responsive-image-gallery/r-gallery.js"></script>
 <script src="js/main.js"></script>
-<script src="js/index.js"></script>
+<script src="js-blog/index.js"></script>
 </body>
 
 </html>
