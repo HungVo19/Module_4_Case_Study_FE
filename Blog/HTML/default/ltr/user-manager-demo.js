@@ -5,12 +5,13 @@ function run123() {
 }
 
 
+
+
 function showListUsers() {
     $.ajax({
         type: "GET",
         url: LOCAL_URL,
         success: function (data) {
-
             let count = 1;
             let content = `<thead>
                                     <tr>
@@ -44,26 +45,7 @@ function showListUsers() {
                 $('#customer-info-detail-3 tbody').append(userRow);
             })
 
-            //         for(let i =0; i <data.content.length; i++) {
-            //             content += `<tr>
-            //     <td class="checkbox-column text-center">${count++}</td>
-            //      <td class="align-center">
-            //          <span><img src="assets/img/90x90.jpg" class="" alt="profile"></span>
-            //      </td>
-            //      <td>${data.content[i].name}</td>
-            //      <td>${data.content[i].username}</td>
-            //      <td>${data.content[i].email}</td>
-            //      <td>${data.content[i].phoneNumber}</td>
-            //      <td>${data.content[i].role.name}</td>
-            //     <td class="align-center">
-            //          <button style="background-color: transparent; border: none" onclick="setStatus(${data.content[i].id})"></button>
-            //      </td>
-            // </tr>`
-            //         }
-            //
-            //         $('#customer-info-detail-3').html(content);
-
-            drawDT();
+            drawDT()
         }
     })
     // Event.preventDefault();
@@ -74,20 +56,17 @@ function setStatus(id) {
         type: "POST",
         url: LOCAL_URL + id,
         success: function () {
-            location.reload();
-            // showListUsers();
-            // showListUsers();
+            // location.reload();
+            showListUsers();
+            drawDT();
         }
     })
     // Event.preventDefault();
 }
 
-
 function drawDT() {
-    var c3 = $('#customer-info-detail-3').DataTable({
-        serverSide: false,
-        paging: true,
-        "lengthMenu": [2, 10, 20, 50, 100],
+    let c3 = $('#customer-info-detail-3').DataTable({
+        "lengthMenu": [5, 10, 20, 50, 100],
         "language": {
             "paginate": {
                 "previous": "<i class='flaticon-arrow-left-1'></i>",
