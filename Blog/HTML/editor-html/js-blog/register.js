@@ -58,6 +58,7 @@ function loginUser(username, pass) {
         datatype: 'json',
         url: "http://localhost:8080/login",
         success: function(data) {
+            sessionStorage.setItem(data.id, data.username);
             window.location.href = "index.html"
         },
         error: function (xhr) {
