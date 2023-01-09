@@ -31,7 +31,7 @@ function drawNavigationBarr() {
                              class="avatar avatar-44 photo"
                              height="35" width="35" style="border-radius: 50%">
                         <ul>
-                 
+
                             <li><a >Hi ${userNamee}</a></li>
                             <li><a href="post-blog.html">Post New Blog</a></li>
                             <li><a href="blog-simple.html">Profile</a></li>
