@@ -16,7 +16,7 @@ function checkLogin() {
                             <li><a href="login-register.html">Login/Register</a></li>
                         </ul>`
     } else {
-        if (sessionStorage.getItem("userRole") === 1) {
+        if (sessionStorage.getItem("userRole") == 1) {
             content = `<img alt="" src="images/site/testo-02.jpg"
                              class="avatar avatar-44 photo"
                              height="35" width="35" style="border-radius: 50%">
