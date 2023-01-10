@@ -6,9 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="Editor - Responsive HTML5 Template">
     <meta name="keywords" content="editor, blog, html5, portfolio">
-    <meta name="author" content="Pixelwars">
+    <meta name="author" content="ZLOGS>
 
-    <!-- FAV and TOUCH ICONS -->
+<!--     FAV and TOUCH ICONS -->
     <link rel="shortcut icon" href="images/ico/favicon.ico">
     <link rel="apple-touch-icon" href="images/ico/apple-touch-icon.png"/>
 
@@ -38,7 +38,7 @@
     <script src="js/jquery-1.11.1.min.js"></script>
     <script src="js/jquery-migrate-1.2.1.min.js"></script>
     <script src="js/modernizr.min.js"></script>
-
+    <script src="js-blog/index.js"></script>
 </head>
 
 <body>
@@ -58,36 +58,8 @@
             <div class="nav-menu">
                 <ul>
                     <li><a href="index.html">Home</a>
-                        <!-- level 2 -->
-                        <ul>
-                            <li><a href="home-alt.html">Home Alternate</a></li>
-                            <li><a href="blog-masonry.html">Blog Masonry</a></li>
-                            <li><a href="blog-simple.html">Blog Simple</a></li>
-                            <li><a href="index.html">Blog Regular Sidebar</a></li>
-                            <li><a href="blog-masonry-with-sidebar.html">Blog Masonry Sidebar</a></li>
-                        </ul>
-                        <!-- level 2 -->
                     <li><a href="gallery.html">Gallery</a></li>
-                    <li><a href="about.html">About Us</a>
-                        <!-- level 2 -->
-                        <ul>
-                            <li><a href="resume.html">Resume</a></li>
-                            <li><a href="typo.html">Typography</a></li>
-                            <li><a href="shortcodes.html">Shortcodes</a></li>
-                            <li><a href="archives.html">Archives</a></li>
-                            <li><a href="404.html">404</a></li>
-                            <li><a href="grid.html">Grid</a></li>
-                            <li><a href="form-elements.html">Forms</a>
-                                <!-- level 3 -->
-                                <ul>
-                                    <li><a href="grid.html">Grid</a></li>
-                                    <li><a href="form-elements.html">Forms</a></li>
-                                </ul>
-                                <!-- level 3 -->
-                            </li>
-                        </ul>
-                        <!-- level 2 -->
-                    </li>
+                    <li><a href="about.html">About Us</a></li>
                     <li><a href="contact.html">Contact</a></li>
                     <li id="checkLogin">
                     </li>
@@ -95,9 +67,6 @@
                 </ul>
             </div>
             <!-- nav-menu -->
-
-            <!--                <a class="search-toggle toggle-link"></a>-->
-
 
 
 
@@ -115,6 +84,8 @@
 
             </div>
             <!-- search-container -->
+
+            <a class="search-toggle toggle-link"></a>
 
             <!-- social-container -->
             <div class="social-container">
@@ -276,7 +247,9 @@
                 <!-- site-content -->
                 <div id="content" class="site-content" role="main"> <!-- blog-regular -->
                     <div class="blog-regular">
+                        <div id="alerttt"></div>
                         <div id="data-table"></div>
+                        <div id="data-search-table"></div>
 
                         <!-- post nav -->
                         <nav class="navigation" role="navigation">
@@ -565,7 +538,6 @@
 <script src="js/selection-sharer/selection-sharer.js"></script>
 <script src="js/responsive-image-gallery/r-gallery.js"></script>
 <script src="js/main.js"></script>
-<script src="js-blog/index.js"></script>
 </body>
 
 </html>

@@ -4,9 +4,9 @@
 
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="ZLOGS - Responsive HTML5 Template">
+    <meta name="description" content="Editor - Responsive HTML5 Template">
     <meta name="keywords" content="editor, blog, html5, portfolio">
-    <meta name="author" content="ZLOGS">
+    <meta name="author" content="Pixelwars">
 
     <!-- FAV and TOUCH ICONS -->
     <link rel="shortcut icon" href="images/ico/favicon.ico">
@@ -38,11 +38,13 @@
     <script src="js/jquery-1.11.1.min.js"></script>
     <script src="js/jquery-migrate-1.2.1.min.js"></script>
     <script src="js/modernizr.min.js"></script>
-    <script src="js-blog/blogSingle.js"></script>
-<!--    <script src="js-blog/index.js"></script>-->
+    <script src="js-blog/index.js"></script>
+    <script src="js-blog/post-blog.js"></script>
+    <script src="https://cdn.ckeditor.com/ckeditor5/35.4.0/classic/ckeditor.js"></script>
 </head>
 
-<body onload="startBlogSingle()">
+<body onload="startPostBlogPage()">
+
 <!-- page -->
 <div id="page" class="hfeed site">
 
@@ -68,6 +70,7 @@
             </div>
             <!-- nav-menu -->
 
+
             <!-- social-container -->
             <div class="social-container">
 
@@ -86,14 +89,14 @@
         </nav>
         <!-- site-navigation -->
 
-        <!-- site-title -->
-        <h1 class="site-title">
-            <a href="index.html" rel="home">
-                <img src="images/site/logo.png" alt="logo">
-                <!--EDITOR-->
-            </a>
-        </h1>
-        <!-- site-title -->
+<!--        &lt;!&ndash; site-title &ndash;&gt;-->
+<!--        <h1 class="site-title">-->
+<!--            <a href="index.html" rel="home">-->
+<!--                <img src="images/site/logo.png" alt="logo">-->
+<!--                &lt;!&ndash;EDITOR&ndash;&gt;-->
+<!--            </a>-->
+<!--        </h1>-->
+<!--        &lt;!&ndash; site-title &ndash;&gt;-->
 
     </header>
     <!-- header -->
@@ -108,166 +111,101 @@
 
             <!-- site-content -->
             <div id="content" class="site-content" role="main"> <!-- layout-fixed -->
-                <div class="layout-fixed">
-                    <!-- .hentry -->
-                    <article class="hentry post" id="blogDetailsSmellCode">
-
-
+                <div class="layout-fixed"> <!-- .hentry -->
+                    <article class="hentry page">
                         <!-- .entry-header -->
                         <header class="entry-header">
+                            <div class="entry-content" id="alerttt">
 
-
-                            <!-- .entry-title -->
-                            <h1 class="entry-title" id="blogTitle"></h1>
-
-
-                            <!-- .entry-meta -->
-                            <div class="entry-meta">
-                                        <span class="entry-date">
-                                        	<time class="entry-date"
-                                                  datetime="2014-07-13T04:34:10+00:00" id="blogtCreatedDate"></time>
-                                        </span>
-                                <span class="comment-link">
-                                            <a href="#comments" id="blogtTotalComments1"></a>
-                                        </span>
-                                <span class="read-time"><span class="eta"></span> read</span>
-                                <span class="cat-links">
-                                            <a href="#" title="View all posts in Travel" rel="category tag" id="bloggAuthor"></a>
-                                        </span>
-                                <!--<span class="edit-link">
-                                    <a class="post-edit-link" href="#">Edit</a>
-                                </span>-->
                             </div>
-                            <!-- .entry-meta -->
-
+                            <h1 class="entry-title">Free your Creativity</h1>
                         </header>
                         <!-- .entry-header -->
-
-                        <!-- .featured-image -->
-                        <div class="featured-image" id="bloggImage">
-                            <img src="images/blog/06.jpg" alt="blog-image">
-                        </div>
-                        <!-- .featured-image -->
 
                         <!-- .entry-content -->
                         <div class="entry-content">
 
-                            <!--<iframe src="https://player.vimeo.com/video/50315573?color=AB977A&title=0&byline=0&portrait=0" width="800" height="450" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>-->
-
-                            <!--<iframe width="100%" height="166" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/202812975&amp;color=ff5500&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false"></iframe>-->
-                            <div id="bloggContentt">
-
-                            </div>
+                            <p>Blogging is in the blood</p>
 
 
+                            <form class="validate-form" id="formmmmm">
 
+                                <p>
+                                    <label for="title">Tittle *</label>
+                                    <input type="text" name="title" id="title" class="required">
+                                </p>
 
-                            <!-- .post-tags -->
-                            <div class="post-tags tagcloud" id="tagCloudOfBloggs">
-                            </div>
-                            <!-- .post-tags -->
+                                <p>
+                                    <label for="description">Description *</label>
+                                    <input type="text" name="description" id="description" class="required">
+                                </p>
 
+                                <p>
+                                    <label for="date">Date Created</label>
+                                    <input type="text" name="date" id="date" readonly>
+                                </p>
 
-                            <!-- .share-links -->
-                            <div class="share-links">
+<!--                                <p>-->
+<!--                                    <label for="budget">Budget</label>-->
+<!--                                    <select name="budget" id="budget">-->
+<!--                                        <option value="1000$">1000$</option>-->
+<!--                                        <option value="2000$">2000$</option>-->
+<!--                                        <option value="3000$">3000$</option>-->
+<!--                                        <option value="5000$+">5000$+</option>-->
+<!--                                    </select>-->
+<!--                                </p>-->
 
-                                <h3>SHARE THIS</h3>
+                                <p>
+                                    <label for="imageee">Attach an Image</label>
+                                    <input type="file" name="image" id="imageee">
+                                </p>
 
-                                <a rel="nofollow" target="_blank"
-                                   href="mailto:?subject=I wanted you to see this post&amp;body=Check out this post : Sketching Mickey - http://themes.pixelwars.org/editor-html/blog-single.html."
-                                   title="Email this post to a friend"><i class="pw-icon-mail"></i></a>
+                                <p>
+                                    <label>Choose Privacy</label>
 
-                                <a rel="nofollow" target="_blank"
-                                   href="http://twitter.com/home?status=Currently reading: 'Sketching Mickey' http://themes.pixelwars.org/editor-html/blog-single.html"
-                                   title="Share this post with your followers"><i class="pw-icon-twitter"></i></a>
+                                    <label class="inline-label">
+                                        <input type="radio" name="privacy" value="true" class="required" checked>Public
+                                    </label>
 
-                                <a rel="nofollow" target="_blank"
-                                   href="http://www.facebook.com/sharer.php?u=http://themes.pixelwars.org/editor-html/blog-single.html&amp;t=Sketching Mickey"
-                                   title="Share this post on Facebook"><i class="pw-icon-facebook"></i></a>
+                                    <label class="inline-label">
+                                        <input type="radio" name="privacy" value="false" class="required">Private
+                                    </label>
+                                </p>
 
-                                <a rel="nofollow" target="_blank"
-                                   href="https://plus.google.com/share?url=http://themes.pixelwars.org/editor-html/blog-single.html"
-                                   title="Share this post on Google+"><i class="pw-icon-gplus"></i></a>
+<!--                                <p>-->
+<!--                                    <label for="budgetm">Privacy</label>-->
+<!--                                    <select name="budgetm" id="budgetm" multiple="multiple">-->
+<!--                                        <option value="1000$">Public</option>-->
+<!--                                        <option value="2000$">Private</option>-->
+<!--                                    </select>-->
+<!--                                </p>-->
+                                <p>
+                                    <label for="your-message">Your Message</label>
+                                    <textarea name="your-message" id="your-message"></textarea>
+                                </p>
 
-                            </div>
-                            <!-- .share-links -->
-
-                            <!-- .about-author -->
-                            <aside class="about-author">
-
-                                <h3 class="section-title">WRITTEN BY</h3>
-                                <!-- .author-bio -->
-                                <div class="author-bio">
-
-<!--                                     .author-img-->
-                                    <div class="author-img" id="authorrImage">
+                                <div class="entry-content">
+                                    <div class="row">
+                                        <div class="col-md-2">
+                                            <a href="index.html"  class="button">Cancel</a>
+                                        </div>
+                                        <div class="col-md-9">
+                                            <a href="" onclick="getValueToCreateBog()" class="button">Send It</a>
+                                        </div>
                                     </div>
-<!--                                     .author-img-->
-
-                                    <!-- .author-info -->
-                                    <div class="author-info">
-                                        <h4 class="author-name" id="authorBloggName"></h4>
-                                        <p>Maecenas iaculis mauris consectetur rhoncus efficitur. Integer aliquet, felis id iaculis sagittis, sapien tellus aliquam neque, in sagittis turpis orci ac odio. In ut diam ac purus suscipit bibendum et ut nisl. Suspendisse non lectus ac arcu hendrerit placerat. Mauris porta, nisl nec vulputate sodales, ipsum eros feugiat tellus, eget ornare felis velit id metus. Sed ex nunc, vestibulum a tellus et, volutpat dignissim ante. Quisque sed semper leo, non congue lorem.</p>
-
-                                    </div>
-                                    <!-- .author-info -->
 
                                 </div>
-                                <!-- .author-bio -->
 
-                            </aside>
-                            <!-- .about-author -->
+                            </form>
+
 
                         </div>
                         <!-- .entry-content -->
 
+
                     </article>
                     <!-- .hentry -->
 
-
-                    <!-- #comments -->
-                    <div id="comments" class="comments-area">
-
-                        <h3 class="section-title" id="totalCommentsResponArea"></h3>
-
-                        <!-- .commentlist -->
-                        <div id="commentListtt">
-                        </div>
-                        <!-- .commentlist -->
-
-
-                        <!-- #respond -->
-                        <div id="respondd">
-
-                            <h3 id="reply-title">LEAVE A COMMENT <small><a rel="nofollow" id="cancel-comment-reply-link"
-                                                                           href="#" style="display:none;">Cancel
-                                reply</a></small></h3>
-
-                            <!-- .commentform -->
-                            <form id="commentform">
-
-                                <p class="comment-notes">Your email address will not be published. Required fields are
-                                    marked <span class="required">*</span></p>
-
-                                <p class="comment-form-comment">
-                                    <label for="comment">Comment</label>
-                                    <textarea id="comment" name="comment" rows="8" aria-required="true"></textarea>
-                                </p>
-                                <p class="form-submit">
-                                    <a name="submit" id="submit" class="button primary"
-                                           onclick="submitComment()">Post Comment</a>
-                                    <input type="hidden" name="comment_post_ID" value="16" id="comment_post_ID">
-                                    <input type="hidden" name="comment_parent" id="comment_parent" value="0">
-                                </p>
-
-                            </form>
-                            <!-- .commentform -->
-
-                        </div>
-                        <!-- #respond -->
-
-                    </div>
-                    <!-- #comments -->
 
                 </div>
                 <!-- layout-fixed -->
@@ -398,6 +336,6 @@
 <script src="js/selection-sharer/selection-sharer.js"></script>
 <script src="js/responsive-image-gallery/r-gallery.js"></script>
 <script src="js/main.js"></script>
-
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.6.16/dist/sweetalert2.all.min.js"></script>
 </body>
 </html>
