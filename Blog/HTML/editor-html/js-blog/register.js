@@ -7,9 +7,7 @@ function hideLoginForm() {
     event.preventDefault()
 }
 
-function registerUser() {
-
-    let username = $('#username').val();
+function registerUser() {let username = $('#username').val();
     let email = $('#email').val();
     let pass = $('#password').val();
     let rePass = $('#rePass').val();
@@ -20,42 +18,53 @@ function registerUser() {
         pass: pass,
         rePass: rePass
     }
-
-    $.ajax({
-        headers: {
-            Accept: "application/json",
-            "Content-Type": "application/json"
-        },
-        type: "POST",
-        data: JSON.stringify(newUser),
-        datatype: 'json',
-        url: "http://localhost:8080/register",
-        success: function(data) {
-            alert("Registered")
-            $("#dangKy-div").hide();
-            $("#dangNhap-div").show();
-            $("#login-username").val(data.username);
-            $("#login-password").val(data.pass)
-        },
-        error: function (xhr) {
-            if(xhr.responseText === "Username is existed") {
-                $('#userExitsErr').show();
-                document.getElementById('userExitsErr').innerHTML = xhr.responseText;
-            }
-            if (xhr.responseText === "Wrong re-pass") {
-                $('#wrongRePassErr').show();
-                document.getElementById('wrongRePassErr').innerHTML = xhr.responseText;
-            }
-            if(xhr.responseText === "Email is existed") {
-                $('#emailValidEr').show();
-                document.getElementById('emailValidEr').innerHTML = xhr.responseText;
-            }
-            if (xhr.responseText === "All fields can not be blank") {
-                alert(xhr.responseText)
-            }
+    if (email.length < 1 || pass.length < 1 || rePass.length < 1) {
+        alert("All fields can not be blank");
+    } else if (validateEmail(email)) {
+            $.ajax({
+                headers: {
+                    Accept: "application/json",
+                    "Content-Type": "application/json"
+                },
+                type: "POST",
+                data: JSON.stringify(newUser),
+                datatype: 'json',
+                url: "http://localhost:8080/register",
+                success: function(data) {
+                    alert("Registered")
+                    $("#dangKy-div").hide();
+                    $("#dangNhap-div").show();
+                    $("#login-username").val(data.username);
+                    $("#login-password").val(data.pass)
+                },
+                error: function (xhr) {
+                    if(xhr.responseText === "Username is existed") {
+                        $('#userExitsErr').show();
+                        document.getElementById('userExitsErr').innerHTML = xhr.responseText;
+                    }
+                    if (xhr.responseText === "Wrong re-pass") {
+                        $('#wrongRePassErr').show();
+                        document.getElementById('wrongRePassErr').innerHTML = xhr.responseText;
+                    }
+                    if(xhr.responseText === "Email is existed") {
+                        $('#emailValidEr').show();
+                        document.getElementById('emailValidEr').innerHTML = xhr.responseText;
+                    }
+                    if (xhr.responseText === "All fields can not be blank") {
+                        alert(xhr.responseText)
+                    }
+                    if (xhr.responseText === "Password must be 6 to 8 characters") {
+                        $('#passErr').show();
+                        document.getElementById('passErr').innerHTML = xhr.responseText;
+                    }
+                }
+            });
+        } else {
+            $('#emailValidEr').show();
+            document.getElementById('emailValidEr').innerHTML = "Email is not valid";
         }
-    });
-    event.defaultPrevented;
+
+    event.preventDefault();
 }
 
 function loginUser(username, pass) {
@@ -76,6 +85,7 @@ function loginUser(username, pass) {
         datatype: 'json',
         url: "http://localhost:8080/login",
         success: function (data) {
+            alert("Login success")
             sessionStorage.setItem("userId", data.id);
             sessionStorage.setItem("userRole", data.role.id)
             window.location.href = "index.html"
@@ -201,3 +211,9 @@ function showRegisterForm() {
 function hideError() {
     $('.errorText').hide();
 }
+
+const validateEmail = (email) => {
+    return email.match(
+        /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+    );
+};
