@@ -94,7 +94,7 @@ function deleteBlog(id) {
     if (confirm(confirmText)) {
         $.ajax({
             type: "POST",
-            url: "http://localhost:8080/blogs/" + id,
+            url: "http://localhost:8080/blogs/set/" + id,
             success: function () {
                 alert(successText);
                 getBlogs();
