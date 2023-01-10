@@ -35,7 +35,7 @@ function drawNavigationBarr() {
                             <li><a >Hi ${userNamee}</a></li>
                             <li><a href="post-blog.html">Post New Blog</a></li>
                             <li><a href="blog-simple.html">Profile</a></li>
-                            <li><a href="" onclick="toUserPage()">Manage Post</a></li>
+                            <li><a href="user-manage-post.html">Manage Post</a></li>
                             <li><a href="" onclick="logOut()">Logout</a></li>
                         </ul>`
         } else {
@@ -259,7 +259,7 @@ function getBlogsByLabelIdd(id,namee) {
 
 function showResultFilterByBlogId(number, tagNaem) {
     $("#alerttt").empty();
-    let content = `<div class="alert">"There are  ${number} results with  ${tagNaem}"</div>`
+    let content = `<div class="alert success">"There are  ${number} results with  ${tagNaem}"</div>`
     $("#alerttt").append(content);
     $("#alerttt").show();
     event.preventDefault();

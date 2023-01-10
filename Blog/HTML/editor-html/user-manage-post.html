@@ -38,12 +38,11 @@
     <script src="js/jquery-1.11.1.min.js"></script>
     <script src="js/jquery-migrate-1.2.1.min.js"></script>
     <script src="js/modernizr.min.js"></script>
+    <script src="js-blog/user-manager-post.js"></script>
     <script src="js-blog/index.js"></script>
-    <script src="js-blog/post-blog.js"></script>
-    <script src="https://cdn.ckeditor.com/ckeditor5/35.4.0/classic/ckeditor.js"></script>
 </head>
 
-<body onload="startPostBlogPage()">
+<body onload="startUserBLogManager(0)">
 
 <!-- page -->
 <div id="page" class="hfeed site">
@@ -70,6 +69,24 @@
             </div>
             <!-- nav-menu -->
 
+
+
+            <!-- search-container -->
+            <div class="search-container">
+
+                <div class="search-box">
+                    <form role="search" method="get" class="search-form" action="#">
+                        <label>Search for
+                            <input type="search" id="search-field" placeholder="type and hit enter" name="s">
+                        </label>
+                        <input type="submit" class="search-submit" value="Search">
+                    </form>
+                </div>
+
+            </div>
+            <!-- search-container -->
+
+            <a class="search-toggle toggle-link"></a>
 
             <!-- social-container -->
             <div class="social-container">
@@ -104,103 +121,44 @@
 
     <!-- site-main -->
     <div id="main" class="site-main">
-
-
         <!-- primary -->
         <div id="primary" class="content-area">
 
             <!-- site-content -->
             <div id="content" class="site-content" role="main"> <!-- layout-fixed -->
-                <div class="layout-fixed"> <!-- .hentry -->
-                    <article class="hentry page">
+                <header class="entry-header">
+                    <h1 class="entry-title">Keeping morale high</h1>
+                </header>
+                <div class="layout-full"> <!-- .hentry -->
+                    <article class="hentry">
                         <!-- .entry-header -->
-                        <header class="entry-header">
-                            <div class="entry-content" id="alerttt">
-
+                        <div class="row">
+<!--                            <div class="col-md-2"></div>-->
+<!--                            <div class="col-md-8">-->
+                                <table id="user-blog-data-table">
+                                    <thead>
+                                    <tr>
+                                        <th>#</th>
+                                        <th>Title</th>
+                                        <th>Created Date</th>
+                                        <th>Image</th>
+                                        <th>Description</th>
+                                        <th>Total Comment</th>
+                                        <th>Privacy</th>
+                                        <th>Action</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    </tbody>
+                                </table>
                             </div>
-                            <h1 class="entry-title">Free your Creativity</h1>
-                        </header>
-                        <!-- .entry-header -->
-
                         <!-- .entry-content -->
-                        <div class="entry-content">
-
-                            <p>Blogging is in the blood</p>
-
-
-                            <form class="validate-form" id="formmmmm">
-
-                                <p>
-                                    <label for="title">Tittle *</label>
-                                    <input type="text" name="title" id="title" class="required">
-                                </p>
-
-                                <p>
-                                    <label for="description">Description *</label>
-                                    <input type="text" name="description" id="description" class="required">
-                                </p>
-
-                                <p>
-                                    <label for="date">Date Created</label>
-                                    <input type="text" name="date" id="date" readonly>
-                                </p>
-
-<!--                                <p>-->
-<!--                                    <label for="budget">Budget</label>-->
-<!--                                    <select name="budget" id="budget">-->
-<!--                                        <option value="1000$">1000$</option>-->
-<!--                                        <option value="2000$">2000$</option>-->
-<!--                                        <option value="3000$">3000$</option>-->
-<!--                                        <option value="5000$+">5000$+</option>-->
-<!--                                    </select>-->
-<!--                                </p>-->
-
-                                <p>
-                                    <label for="imageee">Attach an Image</label>
-                                    <input type="file" name="image" id="imageee">
-                                </p>
-
-                                <p>
-                                    <label>Choose Privacy</label>
-
-                                    <label class="inline-label">
-                                        <input type="radio" name="privacy" value="true" class="required" checked>Public
-                                    </label>
-
-                                    <label class="inline-label">
-                                        <input type="radio" name="privacy" value="false" class="required">Private
-                                    </label>
-                                </p>
-
-<!--                                <p>-->
-<!--                                    <label for="budgetm">Privacy</label>-->
-<!--                                    <select name="budgetm" id="budgetm" multiple="multiple">-->
-<!--                                        <option value="1000$">Public</option>-->
-<!--                                        <option value="2000$">Private</option>-->
-<!--                                    </select>-->
-<!--                                </p>-->
-                                <p>
-                                    <label for="your-message">Your Message</label>
-                                    <textarea name="your-message" id="your-message"></textarea>
-                                </p>
-
-                                <div class="entry-content">
-                                    <div class="row">
-                                        <div class="col-md-2">
-                                            <a href="index.html"  class="button">Cancel</a>
-                                        </div>
-                                        <div class="col-md-9">
-                                            <a href="" onclick="getValueToCreateBog()" class="button">Send It</a>
-                                        </div>
-                                    </div>
-
-                                </div>
-
-                            </form>
-
-
+                        <div class="row" >
+                            <div class="col-md-10">
+                            </div>
+                            <div class="col-md-2" id="paginationn">
+                            </div>
                         </div>
-                        <!-- .entry-content -->
 
 
                     </article>
@@ -336,6 +294,5 @@
 <script src="js/selection-sharer/selection-sharer.js"></script>
 <script src="js/responsive-image-gallery/r-gallery.js"></script>
 <script src="js/main.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.6.16/dist/sweetalert2.all.min.js"></script>
 </body>
 </html>

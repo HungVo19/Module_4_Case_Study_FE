@@ -36,38 +36,62 @@ function getValueToCreateBog() {
     let title = $("#title").val();
     let description = $("#description").val();
     let content = editor.getData();
-    let newBlog = {
-        title: title,
-        description: description,
-        image: "",
-        privacy: privacy,
-        content: content,
-       user: {
-            id: userId
-       }
-    };
-    let formData =new FormData;
-    formData.append("file", $("#imageee")[0].files[0]);
-    formData.append("blog", new Blob([JSON.stringify(newBlog)],
-        {type:'application/json'}))
+    if (title === "") {
+        $("#alerttt").empty();
+        let content1 = `<h3 class="alert error"> Title cannot be blank!</h3>`
+        $("#alerttt").append(content1);
+        window.scrollTo(0, 0);
+        $("#alerttt").show();
+        setTimeout(function () {
+            $('#alerttt').fadeOut('slow');
+        }, 1000);
+        // $("#formmmmm")[0].reset();
+    } else if (content.length <= 300) {
+        $("#alerttt").empty();
+        let content1 = `<h3 class="alert error"> 300 characters must be minimum</h3>`
+        $("#alerttt").append(content1);
+        window.scrollTo(0, 0);
+        $("#alerttt").show();
+        setTimeout(function () {
+            $('#alerttt').fadeOut('slow');
+        }, 1000);
+        // $("#formmmmm")[0].reset();
+    } else {
+        let newBlog = {
+            title: title,
+            description: description,
+            image: "",
+            privacy: privacy,
+            content: content,
+            user: {
+                id: userId
+            }
+        };
+        let formData = new FormData;
+        formData.append("file", $("#imageee")[0].files[0]);
+        formData.append("blog", new Blob([JSON.stringify(newBlog)],
+            {type: 'application/json'}))
 
-    $.ajax({
-        header:{
-
-        },
-        contentType: false,
-        processData: false,
-        type: "POST",
-        url: "http://localhost:8080/blogs",
-        data: formData,
-        success: function (data) {
-            Swal.fire(
-                'Good job!',
-                'You clicked the button!',
-                'success'
-            )
-        }
-    })
+        $.ajax({
+            header: {},
+            contentType: false,
+            processData: false,
+            type: "POST",
+            url: "http://localhost:8080/blogs",
+            data: formData,
+            success: function () {
+                $("#alerttt").empty();
+                let content1 = `<h3 class="alert success"> New Blog Created Successfully ! </h3>`
+                $("#alerttt").append(content1);
+                $("#alerttt").show();
+                window.scrollTo(0, 0);
+                setTimeout(function () {
+                    $('#alerttt').fadeOut('slow');
+                }, 2000);
+                $("#formmmmm")[0].reset();
+            }
+        })
+    }
     event.preventDefault();
 }
 

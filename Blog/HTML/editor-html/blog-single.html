@@ -68,25 +68,6 @@
             </div>
             <!-- nav-menu -->
 
-
-
-            <!-- search-container -->
-            <div class="search-container">
-
-                <div class="search-box">
-                    <form role="search" method="get" class="search-form" action="#">
-                        <label>Search for
-                            <input type="search" id="search-field" placeholder="type and hit enter" name="s">
-                        </label>
-                        <input type="submit" class="search-submit" value="Search">
-                    </form>
-                </div>
-
-            </div>
-            <!-- search-container -->
-
-            <a class="search-toggle toggle-link"></a>
-
             <!-- social-container -->
             <div class="social-container">
 
@@ -183,9 +164,6 @@
 
                             <!-- .post-tags -->
                             <div class="post-tags tagcloud" id="tagCloudOfBloggs">
-                                <a href="#" rel="tag">life</a>
-                                <a href="#" rel="tag">mind</a>
-                                <a href="#" rel="tag">think</a>
                             </div>
                             <!-- .post-tags -->
 
@@ -218,31 +196,18 @@
                             <aside class="about-author">
 
                                 <h3 class="section-title">WRITTEN BY</h3>
-
                                 <!-- .author-bio -->
                                 <div class="author-bio">
 
-                                    <!-- .author-img -->
+<!--                                     .author-img-->
                                     <div class="author-img" id="authorrImage">
                                     </div>
-                                    <!-- .author-img -->
+<!--                                     .author-img-->
 
                                     <!-- .author-info -->
                                     <div class="author-info">
                                         <h4 class="author-name" id="authorBloggName"></h4>
-                                        <p>He was born in Ulm, in the Kingdom of Württemberg in the German Empire on 14
-                                            March 1879. His father was Hermann Einstein, a salesman and engineer. He was
-                                            a really good man for sure.</p>
-
-                                        <!-- SOCIAL -->
-                                        <ul class="social">
-                                            <li><a class="facebook" href="#"></a></li>
-                                            <li><a class="instagram" href="#"></a></li>
-                                            <li><a class="twitter" href="#"></a></li>
-                                            <li><a class="dribbble" href="#"></a></li>
-                                            <li><a class="vine" href="#"></a></li>
-                                        </ul>
-                                        <!-- SOCIAL -->
+                                        <p>Maecenas iaculis mauris consectetur rhoncus efficitur. Integer aliquet, felis id iaculis sagittis, sapien tellus aliquam neque, in sagittis turpis orci ac odio. In ut diam ac purus suscipit bibendum et ut nisl. Suspendisse non lectus ac arcu hendrerit placerat. Mauris porta, nisl nec vulputate sodales, ipsum eros feugiat tellus, eget ornare felis velit id metus. Sed ex nunc, vestibulum a tellus et, volutpat dignissim ante. Quisque sed semper leo, non congue lorem.</p>
 
                                     </div>
                                     <!-- .author-info -->
@@ -266,51 +231,20 @@
                         <h3 class="section-title" id="totalCommentsResponArea"></h3>
 
                         <!-- .commentlist -->
-                        <ol class="commentlist">
-                            <li class="comment even thread-even depth-1">
-
-                                <!-- #comment-## -->
-                                <article class="comment">
-
-                                    <!-- .comment-meta -->
-                                    <header class="comment-meta comment-author vcard">
-                                        <img alt="" src="images/site/testo-01.jpg" class="avatar" height="75"
-                                             width="75">
-                                        <cite class="fn"><a href="#" rel="external nofollow" class="url">Phillip
-                                            Austin</a></cite>
-                                        <span class="comment-date">October 17, 2013 at 2:16 PM</span>
-                                    </header>
-                                    <!-- .comment-meta -->
-
-                                    <!-- .comment-content -->
-                                    <section class="comment-content comment">
-                                        <p>Hi, this is a very useful article. It is a long established fact that a
-                                            reader will be distracted by the readable content of a page when looking at
-                                            its layout.</p>
-                                    </section>
-                                    <!-- .comment-content -->
-
-                                </article>
-                                <!-- #comment-## -->
-
-
-                            </li>
-                            <!-- .comment depth-1 -->
-
-
-                        </ol>
+                        <div id="commentListtt">
+                        </div>
                         <!-- .commentlist -->
 
 
                         <!-- #respond -->
-                        <div id="respond">
+                        <div id="respondd">
 
                             <h3 id="reply-title">LEAVE A COMMENT <small><a rel="nofollow" id="cancel-comment-reply-link"
                                                                            href="#" style="display:none;">Cancel
                                 reply</a></small></h3>
 
                             <!-- .commentform -->
-                            <form action="#" method="post" id="commentform">
+                            <form id="commentform">
 
                                 <p class="comment-notes">Your email address will not be published. Required fields are
                                     marked <span class="required">*</span></p>
@@ -319,31 +253,9 @@
                                     <label for="comment">Comment</label>
                                     <textarea id="comment" name="comment" rows="8" aria-required="true"></textarea>
                                 </p>
-
-                                <p class="comment-form-author">
-                                    <label for="author">Name <span class="required">*</span></label>
-                                    <input id="author" name="author" type="text" size="30" aria-required="true">
-                                </p>
-
-                                <p class="comment-form-email">
-                                    <label for="email">Email <span class="required">*</span></label>
-                                    <input id="email" name="email" type="text" size="30" aria-required="true">
-                                </p>
-
-                                <p class="comment-form-url">
-                                    <label for="url">Website</label>
-                                    <input id="url" name="url" type="text" size="30">
-                                </p>
-
-                                <p class="form-allowed-tags">You may use these <abbr title="HyperText Markup Language">HTML</abbr>
-                                    tags and attributes: <code>&lt;a href="" title=""&gt; &lt;abbr title=""&gt; &lt;acronym
-                                        title=""&gt; &lt;b&gt; &lt;blockquote cite=""&gt; &lt;cite&gt; &lt;code&gt; &lt;del
-                                        datetime=""&gt; &lt;em&gt; &lt;i&gt; &lt;q cite=""&gt; &lt;strike&gt; &lt;strong&gt; </code>
-                                </p>
-
                                 <p class="form-submit">
-                                    <input type="submit" name="submit" id="submit" class="button primary"
-                                           value="Post Comment">
+                                    <a name="submit" id="submit" class="button primary"
+                                           onclick="submitComment()">Post Comment</a>
                                     <input type="hidden" name="comment_post_ID" value="16" id="comment_post_ID">
                                     <input type="hidden" name="comment_parent" id="comment_parent" value="0">
                                 </p>
