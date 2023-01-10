@@ -14,7 +14,7 @@ function getBlogs(page) {
     } else {
         $.ajax({
             type: "GET",
-            url: "http://localhost:8080/admin/search/blogs?q=" + search + "&page=" + page + "&size=3",
+            url: "http://localhost:8080/blogs/search?q=" + search + "&page=" + page + "&size=3",
             success: function (data) {
                 showBlogs(data)
             }
@@ -53,9 +53,6 @@ function showBlogs(data) {
                 let privacy = blogs.privacy?  `<a>public</a>` : `<a>private</a>`
                 let blogRow =`<tr>
                     <td class="checkbox-column text-center">${count++}</td>
-                    <td class="align-center">
-                        <span><img src="assets/img/90x90.jpg" class="" alt="profile"></span>
-                    </td>
                     <td class="align-center">${blogs.title}</td>
                     <td class="align-center">${blogs.description}</td>
                     <td class="align-center">${blogs.createdDate}</td>
