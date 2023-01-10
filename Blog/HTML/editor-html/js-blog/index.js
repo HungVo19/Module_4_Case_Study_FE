@@ -34,7 +34,7 @@ function drawNavigationBarr() {
 
                             <li><a >Hi ${userNamee}</a></li>
                             <li><a href="post-blog.html">Post New Blog</a></li>
-                            <li><a href="blog-simple.html">Profile</a></li>
+                            <li><a href="update-profile.html">Profile</a></li>
                             <li><a href="user-manage-post.html">Manage Post</a></li>
                             <li><a href="" onclick="logOut()">Logout</a></li>
                         </ul>`
