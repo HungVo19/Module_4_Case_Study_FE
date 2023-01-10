@@ -168,7 +168,7 @@ function displayBlogs(data) {
                                 </header>
                                 
                                 <div class="featured-image">
-                                    <a href="../blog-single.html">
+                                    <a href="" onclick="readBlogDetail(${blog.id})">
                                         <img src="${blog.image}" alt="blog-image">
                                     </a>
                                 </div>
@@ -187,7 +187,6 @@ function displayBlogs(data) {
                             <!-- .hentry -->`;
         $('#data-table').append(blogRow);
     })
-
 }
 
 function readBlogDetail(blogId) {
@@ -320,3 +319,4 @@ function displayBlogsFindByLabelId(data) {
     })
     event.preventDefault();
 }
+

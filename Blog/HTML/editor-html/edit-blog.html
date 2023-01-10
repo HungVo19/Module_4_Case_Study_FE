@@ -34,17 +34,18 @@
     <link rel="stylesheet" type="text/css" href="css/768.css">
     <link rel="stylesheet" type="text/css" href="css/992.css">
 
-
     <!-- INITIAL SCRIPTS -->
     <script src="js/jquery-1.11.1.min.js"></script>
     <script src="js/jquery-migrate-1.2.1.min.js"></script>
     <script src="js/modernizr.min.js"></script>
-    <script src="js-blog/user-manager-post.js"></script>
     <script src="js-blog/index.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.6.16/dist/sweetalert2.all.min.js"></script>
+    <script src="js-blog/post-blog.js"></script>
+    <script src="https://cdn.ckeditor.com/ckeditor5/35.4.0/classic/ckeditor.js"></script>
+    <script src="js-blog/edit-blog.js"></script>
+
 </head>
 
-<body onload="startUserBLogManager(0)">
+<body onload="startEditBlogPage()">
 
 <!-- page -->
 <div id="page" class="hfeed site">
@@ -72,24 +73,6 @@
             <!-- nav-menu -->
 
 
-
-            <!-- search-container -->
-            <div class="search-container">
-
-                <div class="search-box">
-                    <form role="search" method="get" class="search-form" action="#">
-                        <label>Search for
-                            <input type="search" id="search-field" placeholder="type and hit enter" name="s">
-                        </label>
-                        <input type="submit" class="search-submit" value="Search">
-                    </form>
-                </div>
-
-            </div>
-            <!-- search-container -->
-
-            <a class="search-toggle toggle-link"></a>
-
             <!-- social-container -->
             <div class="social-container">
 
@@ -108,60 +91,99 @@
         </nav>
         <!-- site-navigation -->
 
-<!--        &lt;!&ndash; site-title &ndash;&gt;-->
-<!--        <h1 class="site-title">-->
-<!--            <a href="index.html" rel="home">-->
-<!--                <img src="images/site/logo.png" alt="logo">-->
-<!--                &lt;!&ndash;EDITOR&ndash;&gt;-->
-<!--            </a>-->
-<!--        </h1>-->
-<!--        &lt;!&ndash; site-title &ndash;&gt;-->
-
     </header>
     <!-- header -->
 
 
     <!-- site-main -->
     <div id="main" class="site-main">
+
         <!-- primary -->
         <div id="primary" class="content-area">
 
             <!-- site-content -->
             <div id="content" class="site-content" role="main"> <!-- layout-fixed -->
-                <header class="entry-header">
-                    <h1 class="entry-title">Keeping morale high</h1>
-                </header>
-                <div class="layout-full"> <!-- .hentry -->
-                    <article class="hentry">
+                <div class="layout-fixed"> <!-- .hentry -->
+                    <article class="hentry page">
                         <!-- .entry-header -->
-                        <div id="veryFirstBLog"></div>
-                        <div class="row">
-<!--                            <div class="col-md-2"></div>-->
-<!--                            <div class="col-md-8">-->
-                                <table id="user-blog-data-table">
-                                    <thead>
-                                    <tr>
-                                        <th>#</th>
-                                        <th>Title</th>
-                                        <th>Created Date</th>
-                                        <th>Image</th>
-                                        <th>Description</th>
-                                        <th>Total Comment</th>
-                                        <th>Privacy</th>
-                                        <th>Action</th>
-                                    </tr>
-                                    </thead>
-                                    <tbody>
-                                    </tbody>
-                                </table>
+                        <header class="entry-header">
+                            <div class="entry-content" id="alerttt">
+
                             </div>
+                            <h1 class="entry-title">Free your Creativity</h1>
+                        </header>
+                        <!-- .entry-header -->
+
                         <!-- .entry-content -->
-                        <div class="row" >
-                            <div class="col-md-10">
-                            </div>
-                            <div class="col-md-2" id="paginationn">
-                            </div>
+                        <div class="entry-content">
+
+                            <p>Blogging is in the blood</p>
+
+
+                            <form class="validate-form" id="formmmmm">
+
+                                <p>
+                                    <label for="title">Tittle *</label>
+                                    <input type="text" name="title" id="title" class="required">
+                                </p>
+
+                                <p>
+                                    <label for="date">Date Created</label>
+                                    <input type="text" name="date" id="date" readonly>
+                                </p>
+                                <div>
+                                    <label>Image *</label>
+                                    <div id="blogImagge">
+
+                                    </div>
+                                </div>
+
+                                <p>
+                                    <label for="imageee">Attach New Image</label>
+                                    <input type="file" name="image" id="imageee">
+                                </p>
+
+                                <p>
+                                    <label>Choose Privacy</label>
+
+                                    <label class="inline-label">
+                                        <input type="radio" name="privacy" value="true" class="required" id="publicPrivacy" checked>Public
+                                    </label>
+
+                                    <label class="inline-label">
+                                        <input type="radio" name="privacy" value="false" class="required" id="privatePrivacyy">Private
+                                    </label>
+                                </p>
+
+                                <p>
+                                    <label for="description">Description *</label>
+                                    <textarea name="description" id="description"></textarea>
+                                    <!--                                    <input type="text" name="description" id="description" class="required">-->
+                                </p>
+
+                                <p>
+                                    <label for="your-message">Your Message</label>
+                                    <textarea name="your-message" id="your-message"></textarea>
+                                </p>
+
+                                <div class="entry-content">
+                                    <div class="row">
+                                        <div class="col-md-2">
+                                            <a href="index.html" class="button">Cancel</a>
+                                        </div>
+                                        <div class="col-md-9">
+                                            <a href="" onclick="getValueToCreateBogg()" class="button">Send It</a>
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                            </form>
+
+
                         </div>
+                        <!-- .entry-content -->
+
 
                     </article>
                     <!-- .hentry -->
@@ -296,5 +318,6 @@
 <script src="js/selection-sharer/selection-sharer.js"></script>
 <script src="js/responsive-image-gallery/r-gallery.js"></script>
 <script src="js/main.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.6.16/dist/sweetalert2.all.min.js"></script>
 </body>
 </html>
