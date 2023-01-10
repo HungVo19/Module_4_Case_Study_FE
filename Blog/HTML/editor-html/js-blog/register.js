@@ -7,7 +7,8 @@ function hideLoginForm() {
     event.preventDefault()
 }
 
-function registerUser() {let username = $('#username').val();
+function registerUser() {
+    let username = $('#username').val();
     let email = $('#email').val();
     let pass = $('#password').val();
     let rePass = $('#rePass').val();
@@ -19,50 +20,64 @@ function registerUser() {let username = $('#username').val();
         rePass: rePass
     }
     if (email.length < 1 || pass.length < 1 || rePass.length < 1) {
-        alert("All fields can not be blank");
+        Swal.fire({
+            icon: 'error',
+            title: 'All fields can not be blank',
+        })
     } else if (validateEmail(email)) {
-            $.ajax({
-                headers: {
-                    Accept: "application/json",
-                    "Content-Type": "application/json"
-                },
-                type: "POST",
-                data: JSON.stringify(newUser),
-                datatype: 'json',
-                url: "http://localhost:8080/register",
-                success: function(data) {
-                    alert("Registered")
-                    $("#dangKy-div").hide();
-                    $("#dangNhap-div").show();
-                    $("#login-username").val(data.username);
-                    $("#login-password").val(data.pass)
-                },
-                error: function (xhr) {
-                    if(xhr.responseText === "Username is existed") {
-                        $('#userExitsErr').show();
-                        document.getElementById('userExitsErr').innerHTML = xhr.responseText;
-                    }
-                    if (xhr.responseText === "Wrong re-pass") {
-                        $('#wrongRePassErr').show();
-                        document.getElementById('wrongRePassErr').innerHTML = xhr.responseText;
-                    }
-                    if(xhr.responseText === "Email is existed") {
-                        $('#emailValidEr').show();
-                        document.getElementById('emailValidEr').innerHTML = xhr.responseText;
-                    }
-                    if (xhr.responseText === "All fields can not be blank") {
-                        alert(xhr.responseText)
-                    }
-                    if (xhr.responseText === "Password must be 6 to 8 characters") {
-                        $('#passErr').show();
-                        document.getElementById('passErr').innerHTML = xhr.responseText;
-                    }
+        $.ajax({
+            headers: {
+                Accept: "application/json",
+                "Content-Type": "application/json"
+            },
+            type: "POST",
+            data: JSON.stringify(newUser),
+            datatype: 'json',
+            url: "http://localhost:8080/register",
+            success: function (data) {
+                Swal.fire(
+                    'Registered!'
+                )
+                // alert("Registered")
+                $("#dangKy-div").hide();
+                $("#dangNhap-div").show();
+                $("#login-username").val(data.username);
+                $("#login-password").val(data.pass)
+            },
+            error: function (xhr) {
+                if (xhr.responseText === "Username is existed") {
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'Username is existed',
+                    })
                 }
-            });
-        } else {
-            $('#emailValidEr').show();
-            document.getElementById('emailValidEr').innerHTML = "Email is not valid";
-        }
+                if (xhr.responseText === "Wrong re-pass") {
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'Wrong re-pass',
+                    })
+                }
+                if (xhr.responseText === "Email is existed") {
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'Email is existed',
+                    })
+                }
+                if (xhr.responseText === "Password must be 6 to 8 characters") {
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'Password must be 6 to 8 characters',
+                    })
+                }
+            }
+        });
+    } else {
+        $('#emailValidEr').show();
+        Swal.fire({
+            icon: 'error',
+            title: 'Email is not valid',
+        })
+    }
 
     event.preventDefault();
 }
@@ -92,16 +107,23 @@ function loginUser(username, pass) {
         },
         error: function (xhr) {
             if (xhr.responseText === "All fields can not be blank") {
-                alert(xhr.responseText)
+                Swal.fire({
+                    icon: 'error',
+                    title: xhr.responseText,
+                })
             }
             if (xhr.responseText === "Account blocked" ||
                 xhr.responseText === "Account not exist") {
-                $("#checkUsernameLogin").show();
-                document.getElementById("checkUsernameLogin").innerHTML = xhr.responseText;
+                Swal.fire({
+                    icon: 'error',
+                    title: xhr.responseText,
+                })
             }
             if (xhr.responseText === "Wrong password") {
-                $("#checkPassLogin").show();
-                document.getElementById("checkPassLogin").innerHTML = xhr.responseText;
+                Swal.fire({
+                    icon: 'error',
+                    title: xhr.responseText,
+                })
             }
         }
     });
@@ -114,7 +136,6 @@ function forgotPass() {
         username: username,
         email: email
     }
-
     $.ajax({
         headers: {
             Accept: "application/json",
@@ -133,16 +154,22 @@ function forgotPass() {
         },
         error: function (xhr) {
             if (xhr.responseText === "Username not exist") {
-                $("#checkUsernameForgot").show();
-                document.getElementById("checkUsernameForgot").innerHTML = xhr.responseText;
+                Swal.fire({
+                    icon: 'error',
+                    title: xhr.responseText,
+                })
             }
             if (xhr.responseText === "Wrong email") {
-                $("#checkEmailForgot").show();
-                document.getElementById("checkEmailForgot").innerHTML = xhr.responseText;
+                Swal.fire({
+                    icon: 'error',
+                    title: xhr.responseText,
+                })
             }
             if (xhr.responseText === "All fields can not be blank") {
-                alert(xhr.responseText);
-
+                Swal.fire({
+                    icon: 'error',
+                    title: xhr.responseText,
+                })
             }
         }
     })
@@ -157,6 +184,12 @@ function changePass() {
         confirmPass: confirmPass
     }
 
+if (newPass.length < 6 || newPass.length > 8) {
+    Swal.fire({
+        icon: 'error',
+        title: 'Password must be 6 to 8 characters',
+    })
+} else {
     $.ajax({
         headers: {
             Accept: "application/json",
@@ -168,7 +201,9 @@ function changePass() {
         url: "http://localhost:8080/users/change-password/" + id,
         success: function (data) {
             sessionStorage.clear();
-            alert("Change password succeeded")
+            Swal.fire(
+                'Change password succeeded!'
+            )
             $('#dangNhap-div').show();
             $('#forgotpass-div').hide();
             $('#change-div').hide();
@@ -176,14 +211,21 @@ function changePass() {
         },
         error: function (xhr) {
             if (xhr.responseText === "All fields can not be blank") {
-                alert(xhr.responseText);
+                Swal.fire({
+                    icon: 'error',
+                    title: xhr.responseText,
+                })
             }
             if (xhr.responseText === "Wrong confirm password") {
-                $("#checkEmailForgot").show();
-                document.getElementById("checkChangePass").innerHTML = xhr.responseText;
+                Swal.fire({
+                    icon: 'error',
+                    title: xhr.responseText,
+                })
             }
         }
     })
+}
+
 }
 
 function showLoginForm() {
@@ -208,6 +250,7 @@ function showRegisterForm() {
     $('#change-div').hide();
     event.preventDefault();
 }
+
 function hideError() {
     $('.errorText').hide();
 }
