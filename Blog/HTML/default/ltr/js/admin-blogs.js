@@ -50,6 +50,7 @@ function showBlogs(data) {
             $.each(data.content, (i, blogs) =>{
 
                 let status = blogs.status ? `<span class="shadow-none badge badge-success" style="width: 80px">Show</span>` : `<span class="shadow-none badge badge-danger" style="width: 80px">Hide</span>`
+                let privacy = blogs.privacy?  `<a>public</a>` : `<a>private</a>`
                 let blogRow =`<tr>
                     <td class="checkbox-column text-center">${count++}</td>
                     <td class="align-center">
@@ -58,7 +59,7 @@ function showBlogs(data) {
                     <td class="align-center">${blogs.title}</td>
                     <td class="align-center">${blogs.description}</td>
                     <td class="align-center">${blogs.createdDate}</td>
-                    <td class="align-center">${blogs.privacy}</td>
+                    <td class="align-center">` + privacy + `</td>
                     <td class="align-center">${blogs.user.username}</td>
                     <td class="align-center">` + checkCountCmt(blogs.id) + `</td>                   
                     <td class="text-center">
@@ -82,40 +83,33 @@ function showBlogs(data) {
 }
 
 function deleteBlog(id) {
-    let confirmText;
-    let successText = "";
-    if (checkStatusBlog(id)) {
-        confirmText = "Do you really want to hide this blog?"
-        successText = "Hide succeed!"
-    } else {
-        confirmText = "Do you really want to show this blog?";
-        successText = "Show succeed!";
-    }
-    if (confirm(confirmText)) {
-        $.ajax({
-            type: "POST",
-            url: "http://localhost:8080/blogs/set/" + id,
-            success: function () {
-                alert(successText);
-                getBlogs();
-            }
-        })
-    }
-}
-
-function checkStatusBlog(id) {
-    let check = false;
-    $.ajax({
-        type: "GET",
-        url: "http://localhost:8080/blogs/" + id,
-        async: false,
-        success: function (data) {
-            if (data.status) {
-                check = true;
-            }
+    Swal.fire({
+        title: 'Are you sure?',
+        text: "You won't be able to revert this!",
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        confirmButtonText: 'Yes, delete it!'
+    }).then((result) => {
+        if (result.isConfirmed) {
+            $.ajax({
+                type: "POST",
+                url: "http://localhost:8080/blogs/set/" + id,
+                success: function () {
+                    Swal.fire({
+                            position: 'center',
+                            icon: 'success',
+                            title: 'Delete Successfully!',
+                            showConfirmButton: false,
+                            timer: 1000
+                        }
+                    );
+                    getBlogs();
+                }
+            })
         }
     })
-    return check;
 }
 
 
