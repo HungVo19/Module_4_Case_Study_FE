@@ -1,5 +1,5 @@
 <!doctype html>
-<html class="is-menu-fixed">
+<html class="is-menu-fixed" xmlns="http://www.w3.org/1999/html">
 <head>
 
     <meta charset="utf-8">
@@ -128,14 +128,14 @@
         </nav>
         <!-- site-navigation -->
 
-        <!-- site-title -->
-        <h1 class="site-title">
-            <a href="index.html" rel="home">
-                <img src="images/site/logo.png" alt="logo">
-                <!--EDITOR-->
-            </a>
-        </h1>
-        <!-- site-title -->
+<!--        &lt;!&ndash; site-title &ndash;&gt;-->
+<!--        <h1 class="site-title">-->
+<!--            <a href="index.html" rel="home">-->
+<!--                <img src="images/site/logo.png" alt="logo">-->
+<!--                &lt;!&ndash;EDITOR&ndash;&gt;-->
+<!--            </a>-->
+<!--        </h1>-->
+<!--        &lt;!&ndash; site-title &ndash;&gt;-->
 
 
         <!--<h1 class="site-title">
@@ -151,23 +151,23 @@
 
 
     <!-- site-main -->
-    <div id="main" class="site-main">
+    <div id="main" class="site-main" oninput="hideError()">
 
 
         <!-- primary -->
         <div id="primary" class="content-area">
 
+
             <!-- site-content -->
             <div id="content" class="site-content" role="main">
-
                 <div class="layout-fixed" id="dangKy-div"> <!-- .hentry -->
+
                     <article class="hentry page">
+
                         <!-- .entry-header -->
                         <header class="entry-header">
                             <h1 class="entry-title">Register</h1>
                         </header>
-                        <!-- .entry-header -->
-
 
                         <!-- .entry-content -->
                         <div class="entry-content" style="margin-left: 220px">
@@ -178,28 +178,32 @@
                                     <label for="username">Username *</label>
                                     <input class="inp-form" type="text" name="your-name" id="username"
                                            required>
+                                    <span style="color: red; font-size: 15px" id="userExitsErr" class="errorText"></span>
                                 </p>
 
                                 <p>
                                     <label for="email">Email *</label>
                                     <input class="inp-form" type="email" name="your-email" id="email"
                                            required>
+                                    <span style="color: red; font-size: 15px" id="emailValidEr" class="errorText"></span>
                                 </p>
 
                                 <p>
                                     <label for="password">Password *</label>
                                     <input class="inp-form" type="password" name="subject" id="password"
                                            required>
+                                    <span style="color: red; font-size: 15px" id="passErr" class="errorText"></span>
                                 </p>
 
                                 <p>
                                     <label for="rePass">Re-Password *</label>
-                                    <input class="inp-form" type="password" name="subject" id="rePass"
+                                    <input class="inp-form error-check" type="password" name="subject" id="rePass"
                                            required>
+                                    <span style="color: red; font-size: 15px" id="wrongRePassErr" class="errorText"></span>
+
                                 </p>
                                 <p>
-                                    <a>Already have an Account?</a>
-                                    <br><a href="" onclick="showLoginForm()"> Click here to Login.</a>
+                                    <a href="" onclick="showLoginForm()">Already have an Account? <br> Click here to Login.</a>
                                 </p>
 
                                 <p>
@@ -218,6 +222,7 @@
 
                 </div>
             </div>
+
             <div class="layout-fixed" id="dangNhap-div"> <!-- .hentry -->
                 <article class="hentry page">
 
@@ -231,18 +236,24 @@
                     <div class="entry-content" style="margin-left: 220px">
                         <form id="dangNhap-form">
                             <p>
-                                <label for="login-username">Username or Email *</label>
+                                <label for="login-username">Username *</label>
                                 <input class="inp-form" type="text" name="your-name" id="login-username"
                                        required>
+                                <span id="checkUsernameLogin" style="color: red; font-size: 15px" class="errorText"></span>
+
                             </p>
                             <p>
                                 <label for="login-password">Password *</label>
                                 <input class="inp-form" type="password" name="subject" id="login-password"
                                        required>
+                                <span id="checkPassLogin" style="color: red; font-size: 15px" class="errorText"></span>
+
                             </p>
                             <p>
-                                <a>Dont't have an Account yet?</a>
-                                <br><a href="" onclick="hideLoginForm()"> Click here to Sign Up.</a>
+                                <a href="" onclick="showRegisterForm()">Dont't have an Account yet? <br> Click here to Sign Up.</a>
+                                <br>
+                                <br>
+                                <a href="" onclick="forgotForm()"><u>Forgot password</u></a>
                             </p>
 
                             <p>
@@ -250,15 +261,52 @@
                                         onclick="loginUser()">Login
                                 </button>
                             </p>
-                            <p>
-                                <button style="background-color: transparent;" type="button"
-                                        onclick="loginUser()">Forgot password
-                                </button>
-                            </p>
 
                         </form>
+                    </div>
+                    <!-- .entry-content -->
 
 
+                </article>
+                <!-- .hentry -->
+
+            </div>
+
+            <div class="layout-fixed" id="forgotpass-div"> <!-- .hentry -->
+                <article class="hentry page">
+
+                    <!-- .entry-header -->
+                    <header class="entry-header">
+                        <h1 class="entry-title">Forgot password</h1>
+                    </header>
+                    <!-- .entry-header -->
+
+                    <!-- .entry-content -->
+                    <div class="entry-content" style="margin-left: 220px">
+                        <form id="forgotpass-form">
+                            <p>
+                                <label for="forgot-username">Username *</label>
+                                <input class="inp-form" type="text" name="your-name" id="forgot-username"
+                                       required>
+                                <span id="checkUsernameForgot" class="errorText" style="color: red; font-size: 15px"></span>
+                            </p>
+                            <p>
+                                <label  for="forgot-email">Email *</label>
+                                <input class="inp-form" type="text" name="subject" id="forgot-email"
+                                       required>
+                                <span id="checkEmailForgot" class="errorText" style="color: red; font-size: 15px"></span>
+
+                            </p>
+
+                            <p>
+                                <a href="" onclick="showLoginForm()">Back to login</a>
+                            </p>
+                            <p>
+                                <button style="background-color: transparent;" type="button"
+                                        onclick="forgotPass()">Submit
+                                </button>
+                            </p>
+                        </form>
                     </div>
                     <!-- .entry-content -->
 
@@ -267,6 +315,52 @@
 
 
             </div>
+
+            <div class="layout-fixed" id="change-div"> <!-- .hentry -->
+                <article class="hentry page">
+
+                    <!-- .entry-header -->
+                    <header class="entry-header">
+                        <h1 class="entry-title">Change password</h1>
+                    </header>
+                    <!-- .entry-header -->
+
+                    <!-- .entry-content -->
+                    <div class="entry-content" style="margin-left: 220px">
+                        <form id="changepass-form">
+                            <p>
+                                <label for="changepass">Your new pass *</label>
+                                <input class="inp-form" type="password" name="your-name" id="changepass"
+                                       required>
+                                <span class="errorText" style="color: red; font-size: 15px"></span>
+
+                            </p>
+                            <p>
+                                <label for="repass-change">Re-password *</label>
+                                <input class="inp-form" type="password" name="subject" id="repass-change"
+                                       required>
+                                <span  id="checkChangePass" class="errorText" style="color: red; font-size: 15px"></span>
+
+                            </p>
+                            <p>
+                                <button style="background-color: transparent;" type="button"
+                                        onclick="changePass()">Submit
+                                </button>
+                                <button style="background-color: transparent;" type="button"
+                                        onclick="showLoginForm()">Back to login
+                                </button>
+                            </p>
+
+                        </form>
+                    </div>
+                    <!-- .entry-content -->
+
+                </article>
+                <!-- .hentry -->
+
+
+            </div>
+
         </div>
     </div> <!-- layout-fixed -->
     <!-- layout-fixed -->
@@ -281,114 +375,114 @@
 <!-- site-main -->
 
 
-<!-- site-footer -->
-<footer id="colophon" class="site-footer" role="contentinfo">
+<!--&lt;!&ndash; site-footer &ndash;&gt;-->
+<!--<footer id="colophon" class="site-footer" role="contentinfo">-->
 
-    <!-- layout-medium -->
-    <div class="layout-medium">
+<!--&lt;!&ndash;    &lt;!&ndash; layout-medium &ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;    <div class="layout-medium">&ndash;&gt;-->
 
-        <!-- footer-social -->
-        <div class="footer-social">
+<!--&lt;!&ndash;        &lt;!&ndash; footer-social &ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;        <div class="footer-social">&ndash;&gt;-->
 
-            <ul class="social">
-                <li><a class="facebook" href="#"></a></li>
-                <li><a class="twitter" href="#"></a></li>
-                <li><a class="google-plus" href="#"></a></li>
-                <li><a class="dribbble" href="#"></a></li>
-                <li><a class="instagram" href="#"></a></li>
-                <li><a class="vine" href="#"></a></li>
-            </ul>
+<!--&lt;!&ndash;            <ul class="social">&ndash;&gt;-->
+<!--&lt;!&ndash;                <li><a class="facebook" href="#"></a></li>&ndash;&gt;-->
+<!--&lt;!&ndash;                <li><a class="twitter" href="#"></a></li>&ndash;&gt;-->
+<!--&lt;!&ndash;                <li><a class="google-plus" href="#"></a></li>&ndash;&gt;-->
+<!--&lt;!&ndash;                <li><a class="dribbble" href="#"></a></li>&ndash;&gt;-->
+<!--&lt;!&ndash;                <li><a class="instagram" href="#"></a></li>&ndash;&gt;-->
+<!--&lt;!&ndash;                <li><a class="vine" href="#"></a></li>&ndash;&gt;-->
+<!--&lt;!&ndash;            </ul>&ndash;&gt;-->
 
-        </div>
-        <!-- footer-social -->
+<!--&lt;!&ndash;        </div>&ndash;&gt;-->
+<!--&lt;!&ndash;        &lt;!&ndash; footer-social &ndash;&gt;&ndash;&gt;-->
 
-        <!-- footer-sidebar -->
-        <div class="footer-sidebar widget-area" role="complementary">
+<!--&lt;!&ndash;        &lt;!&ndash; footer-sidebar &ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;        <div class="footer-sidebar widget-area" role="complementary">&ndash;&gt;-->
 
-            <!-- widget -->
-            <aside class="widget widget_text">
-                <h3 class="widget-title">About Me</h3>
-                <div class="textwidget">
-                    <img src="images/site/about-small.jpg" alt="avatar">
-                    <p>Hello. I am a freelance writer. I live in a small town somewhere in the world.</p>
-                </div>
-            </aside>
-            <!-- widget -->
+<!--&lt;!&ndash;            &lt;!&ndash; widget &ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;            <aside class="widget widget_text">&ndash;&gt;-->
+<!--&lt;!&ndash;                <h3 class="widget-title">About Me</h3>&ndash;&gt;-->
+<!--&lt;!&ndash;                <div class="textwidget">&ndash;&gt;-->
+<!--&lt;!&ndash;                    <img src="images/site/about-small.jpg" alt="avatar">&ndash;&gt;-->
+<!--&lt;!&ndash;                    <p>Hello. I am a freelance writer. I live in a small town somewhere in the world.</p>&ndash;&gt;-->
+<!--&lt;!&ndash;                </div>&ndash;&gt;-->
+<!--&lt;!&ndash;            </aside>&ndash;&gt;-->
+<!--&lt;!&ndash;            &lt;!&ndash; widget &ndash;&gt;&ndash;&gt;-->
 
-            <!-- widget -->
-            <aside class="widget widget_tag_cloud">
-                <h3 class="widget-title">Tags</h3>
-                <div class="tagcloud"><a href="#" title="1 topic" style="font-size: 8pt;">adaptive</a> <a href="#"
-                                                                                                          title="2 topics"
-                                                                                                          style="font-size: 22pt;">design</a>
-                    <a href="#" title="1 topic" style="font-size: 8pt;">html</a> <a href="#" title="2 topics"
-                                                                                    style="font-size: 22pt;">responsive</a>
-                    <a href="#" title="2 topics" style="font-size: 22pt;">think</a> <a href="#" title="1 topic"
-                                                                                       style="font-size: 8pt;">web
-                        design</a> <a href="#" title="1 topic" style="font-size: 8pt;">css</a> <a href="#"
-                                                                                                  title="2 topics"
-                                                                                                  style="font-size: 22pt;">animations</a>
-                    <a href="#" title="1 topic" style="font-size: 8pt;">layout</a> <a href="#" title="2 topics"
-                                                                                      style="font-size: 14pt;">mobile</a>
-                    <a href="#" title="2 topics" style="font-size: 22pt;">think</a> <a href="#" title="1 topic"
-                                                                                       style="font-size: 8pt;">typography</a>
-                </div>
-            </aside>
-            <!-- widget -->
+<!--&lt;!&ndash;            &lt;!&ndash; widget &ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;            <aside class="widget widget_tag_cloud">&ndash;&gt;-->
+<!--&lt;!&ndash;                <h3 class="widget-title">Tags</h3>&ndash;&gt;-->
+<!--&lt;!&ndash;                <div class="tagcloud"><a href="#" title="1 topic" style="font-size: 8pt;">adaptive</a> <a href="#"&ndash;&gt;-->
+<!--&lt;!&ndash;                                                                                                          title="2 topics"&ndash;&gt;-->
+<!--&lt;!&ndash;                                                                                                          style="font-size: 22pt;">design</a>&ndash;&gt;-->
+<!--&lt;!&ndash;                    <a href="#" title="1 topic" style="font-size: 8pt;">html</a> <a href="#" title="2 topics"&ndash;&gt;-->
+<!--&lt;!&ndash;                                                                                    style="font-size: 22pt;">responsive</a>&ndash;&gt;-->
+<!--&lt;!&ndash;                    <a href="#" title="2 topics" style="font-size: 22pt;">think</a> <a href="#" title="1 topic"&ndash;&gt;-->
+<!--&lt;!&ndash;                                                                                       style="font-size: 8pt;">web&ndash;&gt;-->
+<!--&lt;!&ndash;                        design</a> <a href="#" title="1 topic" style="font-size: 8pt;">css</a> <a href="#"&ndash;&gt;-->
+<!--&lt;!&ndash;                                                                                                  title="2 topics"&ndash;&gt;-->
+<!--&lt;!&ndash;                                                                                                  style="font-size: 22pt;">animations</a>&ndash;&gt;-->
+<!--&lt;!&ndash;                    <a href="#" title="1 topic" style="font-size: 8pt;">layout</a> <a href="#" title="2 topics"&ndash;&gt;-->
+<!--&lt;!&ndash;                                                                                      style="font-size: 14pt;">mobile</a>&ndash;&gt;-->
+<!--&lt;!&ndash;                    <a href="#" title="2 topics" style="font-size: 22pt;">think</a> <a href="#" title="1 topic"&ndash;&gt;-->
+<!--&lt;!&ndash;                                                                                       style="font-size: 8pt;">typography</a>&ndash;&gt;-->
+<!--&lt;!&ndash;                </div>&ndash;&gt;-->
+<!--&lt;!&ndash;            </aside>&ndash;&gt;-->
+<!--&lt;!&ndash;            &lt;!&ndash; widget &ndash;&gt;&ndash;&gt;-->
 
-            <!-- widget : categories -->
-            <aside class="widget widget_categories">
-                <h3 class="widget-title">Categories</h3>
-                <ul>
-                    <li class="cat-item"><a href="#" title="View all posts filed under Nature">Nature</a></li>
-                    <li class="cat-item"><a href="#" title="View all posts filed under Life">Life</a></li>
-                    <li class="cat-item"><a href="#" title="View all posts filed under Adventure">Adventure</a></li>
-                    <li class="cat-item"><a href="#" title="View all posts filed under Freebies">Travel</a></li>
-                    <li class="cat-item"><a href="#" title="View all posts filed under Sport">Sport</a></li>
-                </ul>
-            </aside>
-            <!-- widget : categories -->
-
-
-            <!-- widget -->
-            <aside class="widget widget_recent_entries">
-                <h3 class="widget-title">Recent Posts</h3>
-                <ul>
-                    <li><a href="#">Runaway A Road Adventure</a></li>
-                    <li><a href="#">All In Our Head</a></li>
-                    <li><a href="#">Smaller Plate</a></li>
-                    <li><a href="#">Alice On The Roof</a></li>
-                    <li><a href="#">Becoming A DragonFly</a></li>
-                </ul>
-            </aside>
-            <!-- widget -->
+<!--&lt;!&ndash;            &lt;!&ndash; widget : categories &ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;            <aside class="widget widget_categories">&ndash;&gt;-->
+<!--&lt;!&ndash;                <h3 class="widget-title">Categories</h3>&ndash;&gt;-->
+<!--&lt;!&ndash;                <ul>&ndash;&gt;-->
+<!--&lt;!&ndash;                    <li class="cat-item"><a href="#" title="View all posts filed under Nature">Nature</a></li>&ndash;&gt;-->
+<!--&lt;!&ndash;                    <li class="cat-item"><a href="#" title="View all posts filed under Life">Life</a></li>&ndash;&gt;-->
+<!--&lt;!&ndash;                    <li class="cat-item"><a href="#" title="View all posts filed under Adventure">Adventure</a></li>&ndash;&gt;-->
+<!--&lt;!&ndash;                    <li class="cat-item"><a href="#" title="View all posts filed under Freebies">Travel</a></li>&ndash;&gt;-->
+<!--&lt;!&ndash;                    <li class="cat-item"><a href="#" title="View all posts filed under Sport">Sport</a></li>&ndash;&gt;-->
+<!--&lt;!&ndash;                </ul>&ndash;&gt;-->
+<!--&lt;!&ndash;            </aside>&ndash;&gt;-->
+<!--&lt;!&ndash;            &lt;!&ndash; widget : categories &ndash;&gt;&ndash;&gt;-->
 
 
-        </div>
-        <!-- footer-sidebar -->
+<!--&lt;!&ndash;            &lt;!&ndash; widget &ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;            <aside class="widget widget_recent_entries">&ndash;&gt;-->
+<!--&lt;!&ndash;                <h3 class="widget-title">Recent Posts</h3>&ndash;&gt;-->
+<!--&lt;!&ndash;                <ul>&ndash;&gt;-->
+<!--&lt;!&ndash;                    <li><a href="#">Runaway A Road Adventure</a></li>&ndash;&gt;-->
+<!--&lt;!&ndash;                    <li><a href="#">All In Our Head</a></li>&ndash;&gt;-->
+<!--&lt;!&ndash;                    <li><a href="#">Smaller Plate</a></li>&ndash;&gt;-->
+<!--&lt;!&ndash;                    <li><a href="#">Alice On The Roof</a></li>&ndash;&gt;-->
+<!--&lt;!&ndash;                    <li><a href="#">Becoming A DragonFly</a></li>&ndash;&gt;-->
+<!--&lt;!&ndash;                </ul>&ndash;&gt;-->
+<!--&lt;!&ndash;            </aside>&ndash;&gt;-->
+<!--&lt;!&ndash;            &lt;!&ndash; widget &ndash;&gt;&ndash;&gt;-->
 
 
-    </div>
-    <!-- layout-medium -->
+<!--&lt;!&ndash;        </div>&ndash;&gt;-->
+<!--&lt;!&ndash;        &lt;!&ndash; footer-sidebar &ndash;&gt;&ndash;&gt;-->
 
 
-    <!-- .site-info -->
-    <div class="site-info">
-
-        <!-- layout-medium -->
-        <div class="layout-medium">
-
-            <p>crafted with <i class="pw-icon-heart"></i> <em>by</em> Pixelwars</p>
-
-        </div>
-        <!-- layout-medium -->
-
-    </div>
-    <!-- .site-info -->
+<!--&lt;!&ndash;    </div>&ndash;&gt;-->
+<!--&lt;!&ndash;    &lt;!&ndash; layout-medium &ndash;&gt;&ndash;&gt;-->
 
 
-</footer>
-<!-- site-footer -->
+<!--&lt;!&ndash;    &lt;!&ndash; .site-info &ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;    <div class="site-info">&ndash;&gt;-->
+
+<!--&lt;!&ndash;        &lt;!&ndash; layout-medium &ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;        <div class="layout-medium">&ndash;&gt;-->
+
+<!--&lt;!&ndash;            <p>crafted with <i class="pw-icon-heart"></i> <em>by</em> Pixelwars</p>&ndash;&gt;-->
+
+<!--&lt;!&ndash;        </div>&ndash;&gt;-->
+<!--&lt;!&ndash;        &lt;!&ndash; layout-medium &ndash;&gt;&ndash;&gt;-->
+
+<!--&lt;!&ndash;    </div>&ndash;&gt;-->
+<!--&lt;!&ndash;    &lt;!&ndash; .site-info &ndash;&gt;&ndash;&gt;-->
+
+
+<!--</footer>-->
+<!--&lt;!&ndash; site-footer &ndash;&gt;-->
 
 
 </div>

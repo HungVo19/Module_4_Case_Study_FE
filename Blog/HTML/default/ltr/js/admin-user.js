@@ -16,6 +16,9 @@ function getUsers(page) {
             url: "http://localhost:8080/admin/search?q=" + search + "&page=" + page + "&size=3",
             success: function (data) {
                 showUsers(data)
+            },
+            error: function (xhr) {
+                alert(xhr.responseText);
             }
         })
     }
