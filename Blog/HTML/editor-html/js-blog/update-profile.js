@@ -12,6 +12,7 @@ function showInformation() {
             $("#usernameUser").val(data.username);
         }
     })
+    event.preventDefault();
 }
 
 function updateInformation() {
