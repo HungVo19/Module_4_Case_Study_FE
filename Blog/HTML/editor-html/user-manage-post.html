@@ -34,12 +34,14 @@
     <link rel="stylesheet" type="text/css" href="css/768.css">
     <link rel="stylesheet" type="text/css" href="css/992.css">
 
+
     <!-- INITIAL SCRIPTS -->
     <script src="js/jquery-1.11.1.min.js"></script>
     <script src="js/jquery-migrate-1.2.1.min.js"></script>
     <script src="js/modernizr.min.js"></script>
     <script src="js-blog/user-manager-post.js"></script>
     <script src="js-blog/index.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.6.16/dist/sweetalert2.all.min.js"></script>
 </head>
 
 <body onload="startUserBLogManager(0)">
@@ -132,6 +134,7 @@
                 <div class="layout-full"> <!-- .hentry -->
                     <article class="hentry">
                         <!-- .entry-header -->
+                        <div id="veryFirstBLog"></div>
                         <div class="row">
 <!--                            <div class="col-md-2"></div>-->
 <!--                            <div class="col-md-8">-->
@@ -159,7 +162,6 @@
                             <div class="col-md-2" id="paginationn">
                             </div>
                         </div>
-
 
                     </article>
                     <!-- .hentry -->

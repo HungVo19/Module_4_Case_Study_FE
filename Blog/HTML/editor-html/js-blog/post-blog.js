@@ -89,6 +89,7 @@ function getValueToCreateBog() {
                     $('#alerttt').fadeOut('slow');
                 }, 2000);
                 $("#formmmmm")[0].reset();
+                editor.setData('');
             }
         })
     }

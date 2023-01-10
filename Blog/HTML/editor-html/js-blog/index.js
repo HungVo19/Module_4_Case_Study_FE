@@ -34,7 +34,7 @@ function drawNavigationBarr() {
 
                             <li><a >Hi ${userNamee}</a></li>
                             <li><a href="post-blog.html">Post New Blog</a></li>
-                            <li><a href="blog-simple.html">Profile</a></li>
+                            <li><a href="update-profile.html">Profile</a></li>
                             <li><a href="user-manage-post.html">Manage Post</a></li>
                             <li><a href="" onclick="logOut()">Logout</a></li>
                         </ul>`
@@ -91,8 +91,11 @@ function toUserPage() {
 }
 
 function logOut() {
+    // alert("1")
     sessionStorage.removeItem("userId");
     window.location.href = "index.html";
+    event.preventDefault();
+    // alert("2")
 }
 
 function getBlogs(pageNumber) {
@@ -165,7 +168,7 @@ function displayBlogs(data) {
                                 </header>
                                 
                                 <div class="featured-image">
-                                    <a href="../blog-single.html">
+                                    <a href="" onclick="readBlogDetail(${blog.id})">
                                         <img src="${blog.image}" alt="blog-image">
                                     </a>
                                 </div>
@@ -184,7 +187,6 @@ function displayBlogs(data) {
                             <!-- .hentry -->`;
         $('#data-table').append(blogRow);
     })
-
 }
 
 function readBlogDetail(blogId) {
@@ -317,3 +319,4 @@ function displayBlogsFindByLabelId(data) {
     })
     event.preventDefault();
 }
+
