@@ -40,7 +40,9 @@ function updateInformation() {
         url: LOCAL_URL_PROFILE + userId,
         data: formmm,
         success: function () {
-            alert("Update success");
+            Swal.fire(
+                'Update succeeded!'
+            )
             drawNavigationBarr();
         }
     });
@@ -107,30 +109,45 @@ function changePasssss() {
         newPass: newPass,
         confirmPass: confirmPass
     }
+    if (newPass.length < 6 || newPass.length > 8) {
+        Swal.fire({
+            icon: 'error',
+            title: 'Password must be 6 to 8 characters',
+        })
+    } else {
+        $.ajax({
+            headers: {
+                Accept: "application/json",
+                "Content-Type": "application/json"
+            },
+            type: "PUT",
+            url: "http://localhost:8080/users/change-password/" + userId,
+            data: JSON.stringify(changePassUser),
+            datatype: 'json',
 
-    $.ajax({
-        headers: {
-            Accept: "application/json",
-            "Content-Type": "application/json"
-        },
-        type: "PUT",
-        url: "http://localhost:8080/users/change-password/" + userId,
-        data: JSON.stringify(changePassUser),
-        datatype: 'json',
+            success: function () {
+                alert("Change password success");
+            },
+            error: function (xhr) {
+                if (xhr.responseText === "New password can not same current password") {
+                    Swal.fire({
+                        icon: 'error',
+                        title: xhr.responseText,
+                    })                }
+                if (xhr.responseText === "Wrong re-password") {
+                    Swal.fire({
+                        icon: 'error',
+                        title: xhr.responseText,
+                    })
+                }
+                if (xhr.responseText === "All fields can not be blank") {
+                    Swal.fire({
+                        icon: 'error',
+                        title: xhr.responseText,
+                    })
+                }
+            }
+        });
+    }
 
-        success: function () {
-            alert("Change password success");
-        },
-        error: function (xhr) {
-            if (xhr.responseText === "New password can not same current password") {
-                alert(xhr.responseText);
-            }
-            if (xhr.responseText === "Wrong re-password") {
-                alert(xhr.responseText)
-            }
-            if (xhr.responseText === "All fields can not be blank") {
-                alert(xhr.responseText)
-            }
-        }
-    });
 }

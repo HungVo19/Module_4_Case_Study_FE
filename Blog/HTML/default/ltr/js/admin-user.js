@@ -18,7 +18,13 @@ function getUsers(page) {
                 showUsers(data)
             },
             error: function (xhr) {
-                alert(xhr.responseText);
+
+                Swal.fire({
+                    icon: 'error',
+                    title: xhr.responseText,
+                })
+
+                // alert(xhr.responseText);
             }
         })
     }
@@ -28,23 +34,39 @@ function getUsers(page) {
 function setStatus(id) {
     let confirmText;
     let successText = "";
+    let confirmBtn;
     if (checkStatusUser(id)) {
         confirmText = "Do you really want to block this user?"
         successText = "Block succeed!"
+        confirmBtn = "block"
     } else {
         confirmText = "Do you really want to unblock this user?";
         successText = "Unblock succeed!";
+        confirmBtn = "unblock"
     }
-    if (confirm(confirmText)) {
-        $.ajax({
-            type: "POST",
-            url: "http://localhost:8080/admin/" + id,
-            success: function () {
-                alert(successText);
-                getUsers();
-            }
-        })
-    }
+    Swal.fire({
+        title: 'Are you sure?',
+        text: confirmText,
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        confirmButtonText: 'Yes, ' + confirmBtn + ' this user!',
+    }).then((result) => {
+        if (result.isConfirmed) {
+            $.ajax({
+                type: "POST",
+                url: "http://localhost:8080/admin/" + id,
+                success: function () {
+                    Swal.fire(
+                        successText,
+                    )
+                    getUsers();
+                }
+            })
+
+        }
+    })
 }
 
 function checkStatusUser(id) {
@@ -91,7 +113,7 @@ function showUsers(data) {
         let userRow =`<tr>
                     <td class="text-center">${count++}</td>
                     <td class="align-center">
-                        <span><img src="assets/img/90x90.jpg" class="" alt="profile"></span>
+                        <span><img src="../../../../Blog/HTML/editor-html/${user.avatar}" width="90px" height="90px" class="" alt="profile"></span>
                     </td>
                     <td>${user.name}</td>
                     <td>${user.username}</td>
