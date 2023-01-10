@@ -91,10 +91,11 @@ function toUserPage() {
 }
 
 function logOut() {
-    alert("1")
+    // alert("1")
     sessionStorage.removeItem("userId");
     window.location.href = "index.html";
-    alert("2")
+    event.preventDefault();
+    // alert("2")
 }
 
 function getBlogs(pageNumber) {
