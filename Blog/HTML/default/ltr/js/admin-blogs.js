@@ -62,7 +62,7 @@ function showBlogs(data) {
                     <td class="align-center">${blogs.user.username}</td>
                     <td class="align-center">` + checkCountCmt(blogs.id) + `</td>                   
                     <td class="text-center">
-                        <button style="background-color: transparent; border: none;" onclick="deleteBlog()">` +status +
+                        <button style="background-color: transparent; border: none;" onclick="deleteBlog(${blogs.id})">` +status +
                     `</button>
                     
                     </td>
