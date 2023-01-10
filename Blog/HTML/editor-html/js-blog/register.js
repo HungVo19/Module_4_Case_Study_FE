@@ -76,6 +76,7 @@ function loginUser(username, pass) {
         datatype: 'json',
         url: "http://localhost:8080/login",
         success: function (data) {
+            alert("Login success")
             sessionStorage.setItem("userId", data.id);
             sessionStorage.setItem("userRole", data.role.id)
             window.location.href = "index.html"
