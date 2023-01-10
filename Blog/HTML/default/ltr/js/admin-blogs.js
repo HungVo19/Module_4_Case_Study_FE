@@ -14,7 +14,7 @@ function getBlogs(page) {
     } else {
         $.ajax({
             type: "GET",
-            url: "http://localhost:8080/blogs/search?q=" + search + "&page=" + page + "&size=3",
+            url: "http://localhost:8080/admin/search/blogs?q=" + search + "&page=" + page + "&size=3",
             success: function (data) {
                 showBlogs(data)
             }
