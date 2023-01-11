@@ -100,10 +100,17 @@ function loginUser(username, pass) {
         datatype: 'json',
         url: "http://localhost:8080/login",
         success: function (data) {
-            alert("Login success")
+
+            // alert("Login success")
+            Swal.fire(
+                'Login success!'
+            )
             sessionStorage.setItem("userId", data.id);
             sessionStorage.setItem("userRole", data.role.id)
-            window.location.href = "index.html"
+            setTimeout(function(){
+                window.location.href = "index.html"
+            }, 1000);
+            // window.location.href = "index.html"
         },
         error: function (xhr) {
             if (xhr.responseText === "All fields can not be blank") {
