@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="Editor - Responsive HTML5 Template">
     <meta name="keywords" content="editor, blog, html5, portfolio">
-    <meta name="author" content="ZLOGS">
+    <meta name="author" content="ZLOG">
 
 <!--     FAV and TOUCH ICONS -->
     <link rel="shortcut icon" href="images/ico/favicon.ico">
@@ -74,12 +74,9 @@
             <div class="search-container">
 
                 <div class="search-box">
-                    <form role="search" method="get" class="search-form" action="#">
                         <label>Search for
-                            <input type="search" id="search-field" placeholder="type and hit enter" name="s">
+                            <input type="search" onkeydown="searchBlogss()" id="search-field" placeholder="type and hit enter" name="s">
                         </label>
-                        <input type="submit" class="search-submit" value="Search">
-                    </form>
                 </div>
 
             </div>
@@ -286,6 +283,15 @@
                 </aside>
                 <!-- widget : text -->
 
+                <!-- widget : tag_cloud -->
+                <aside class="widget widget_tag_cloud">
+                    <h3 class="widget-title">Tags</h3>
+                    <div class="tagcloud" id="tagCloudSideBar"></div>
+                </aside>
+                <!-- widget : tag_cloud -->
+
+
+
                 <!-- widget : text -->
                 <aside class="widget widget_text">
                     <h3 class="widget-title">Follow Us</h3>
@@ -301,12 +307,7 @@
                 </aside>
                 <!-- widget : text -->
 
-                <!-- widget : tag_cloud -->
-                <aside class="widget widget_tag_cloud">
-                    <h3 class="widget-title">Tags</h3>
-                    <div class="tagcloud" id="tagCloudSideBar"></div>
-                </aside>
-                <!-- widget : tag_cloud -->
+
 
 
                 <!-- widget : search -->
@@ -315,7 +316,8 @@
 <!--                    <form role="search" class="search-form" >-->
                         <label>
                             <span class="screen-reader-text">Search for:</span>
-                            <input type="search" class="search-field" title="Enter Keyword" id="getKeywordToSearch">
+                            <input type="search" class="search-field"
+                                   title="Enter Keyword" id="getKeywordToSearch" onkeydown="searchBlogs()">
                         </label>
 <!--                    </form>-->
                 </aside>

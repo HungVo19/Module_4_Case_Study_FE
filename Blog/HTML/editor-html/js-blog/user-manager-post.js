@@ -75,7 +75,7 @@ function displayBlogsByUser(blogs) {
                                     <ul>
                                         <li><a style="font-size: 11px" 
                             class="button" href=""  
-                         >Click Here</a>
+                         >Hover Here</a>
                                             <ul>
                                                 <li><a href="" onclick="editBlog(${blog.id})">Edit</a></li>
                                                 <li><a href="" onclick="deleteBlog(${blog.id})">Delete</a></li>
@@ -142,41 +142,41 @@ function isNext(pageNumber) {
     event.preventDefault();
 }
 
-function deleteBlog(id) {
-
-    event.preventDefault();
-}
-
 // function deleteBlog(id) {
-//     Swal.fire({
-//         title: 'Are you sure?',
-//         text: "You won't be able to revert this!",
-//         icon: 'warning',
-//         showCancelButton: true,
-//         confirmButtonColor: '#3085d6',
-//         cancelButtonColor: '#d33',
-//         confirmButtonText: 'Yes, delete it!'
-//     }).then((result) => {
-//         if (result.isConfirmed) {
-//             $.ajax({
-//                 type: "DELETE",
-//                 url: `http://localhost:8080/blogs/` + id,
-//                 success: function () {
-//                     Swal.fire({
-//                             position: 'center',
-//                             icon: 'success',
-//                             title: 'Delete Successfully!',
-//                             showConfirmButton: false,
-//                             timer: 1000
-//                         }
-//                     );
-//                     getBLogsByUserId();
-//                 }
-//             })
-//         }
-//     })
+//
 //     event.preventDefault();
 // }
+
+function deleteBlog(id) {
+    Swal.fire({
+        title: 'Are you sure?',
+        text: "You won't be able to revert this!",
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        confirmButtonText: 'Yes, delete it!'
+    }).then((result) => {
+        if (result.isConfirmed) {
+            $.ajax({
+                type: "DELETE",
+                url: `http://localhost:8080/blogs/` + id,
+                success: function () {
+                    Swal.fire({
+                            position: 'center',
+                            icon: 'success',
+                            title: 'Delete Successfully!',
+                            showConfirmButton: false,
+                            timer: 1000
+                        }
+                    );
+                    getBLogsByUserId();
+                }
+            })
+        }
+    })
+    event.preventDefault();
+}
 
 function editBlog(id) {
     sessionStorage.setItem("blogId", id);
@@ -184,6 +184,74 @@ function editBlog(id) {
     event.preventDefault();
 }
 
-function postBlog() {
+function searchBlogsss() {
+    if (event.keyCode == 13) {
+        let keyword = $("#search-field").val();
+        $.ajax({
+            type: "GET",
+            url: "http://localhost:8080/blogs/search/user?q=" + keyword + "&id=" + userID,
+            success: function (data) {
+                window.scrollTo(0, 0);
+                // $('#user-blog-data-table').empty();
+                $("#alertttt").empty();
+                let content = `<h3 class="alert success">"There are  ${data.totalElements} results with  ${keyword}"</h3>`
+                $("#alertttt").append(content);
+                $("#alertttt").show();
+                $(".search-toggle").trigger("click");
+                $("#search-field").val("");
+                displayBlogsByUserr(data.content);
+                $('#getKeywordToSearch').val('');
+                displayPage(data);
 
+                if (data.pageable.pageNumber === 0) {
+                    document.getElementById("backup").hidden = true
+                }
+                if (data.pageable.pageNumber + 1 === data.totalPages) {
+                    document.getElementById("next").hidden = true
+                }
+            }
+        })
+    }
 }
+
+function displayBlogsByUserr(blogs) {
+    $("#user-blog-data-table tbody").empty();
+    let count = 1;
+    $.each(blogs, (i, blog) => {
+        let setPrivacy = `<a style="font-size: 9px" 
+                            class="button green" href="" 
+                            onclick="changePrivacy(${blog.id})">Public</a>`
+        if (blog.privacy === false) {
+            setPrivacy = `<a style="font-size: 9px" 
+                            class="button" href="" 
+                            onclick="changePrivacy(${blog.id})">Private</a>`
+        }
+        let totalComment = getTotalCommentsEachBLog(blog.id)
+        let content = `<tr>
+                            <td>${count++}</td>
+                            <td><a href="" onclick="readBlogDetails(${blog.id})">${blog.title}</a> </td>
+                            <td width="10%">${blog.createdDate}</td>
+                            <td width="20%"><img src="${blog.image}" alt=""></td>
+                            <td>${blog.description}></td>
+                            <td>${totalComment}</td>
+                            <td width="10%">` + setPrivacy + `</td>
+                            <td>
+                                <div class="nav-menu">
+                                    <ul>
+                                        <li><a style="font-size: 11px" 
+                            class="button" href=""  
+                         >Hover Here</a>
+                                            <ul>
+                                                <li><a href="" onclick="editBlog(${blog.id})">Edit</a></li>
+                                                <li><a href="" onclick="deleteBlog(${blog.id})">Delete</a></li>
+                                            </ul>
+                                        </li>
+                                      
+                                    </ul>
+                                </div>
+                            </td>
+                        </tr>`
+        $("#user-blog-data-table tbody").append(content);
+    })
+}
+

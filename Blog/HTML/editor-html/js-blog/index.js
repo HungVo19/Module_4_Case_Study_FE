@@ -241,7 +241,7 @@ function getTags() {
     event.preventDefault();
 }
 
-function getBlogsByLabelIdd(id,namee) {
+function getBlogsByLabelIdd(id, namee) {
     $.ajax({
         type: "GET",
         url: "http://localhost:8080/labels/" + id + "/blogs",
@@ -320,3 +320,46 @@ function displayBlogsFindByLabelId(data) {
     event.preventDefault();
 }
 
+function searchBlogs() {
+    if(event.keyCode == 13) {
+        let keyword = $("#getKeywordToSearch").val();
+        $.ajax({
+            type: "GET",
+            url: "http://localhost:8080/blogs/search?q=" + keyword,
+            success: function (data) {
+                window.scrollTo(0, 0);
+                $('#data-table').empty();
+                $("#alerttt").empty();
+                let content = `<div class="alert success">"There are  ${data.totalElements} results with  ${keyword}"</div>`
+                $("#alerttt").append(content);
+                $("#alerttt").show();
+                displayBlogs(data.content);
+                $('#getKeywordToSearch').val('');
+                $('.navigation').hide();
+            }
+        })
+    }
+}
+
+function searchBlogss() {
+    if(event.keyCode == 13) {
+        let keyword = $("#search-field").val();
+        $.ajax({
+            type: "GET",
+            url: "http://localhost:8080/blogs/search?q=" + keyword,
+            success: function (data) {
+                window.scrollTo(0, 0);
+                $('#data-table').empty();
+                $("#alerttt").empty();
+                let content = `<div class="alert success">"There are  ${data.totalElements} results with  ${keyword}"</div>`
+                $("#alerttt").append(content);
+                $("#alerttt").show();
+                $(".search-toggle").trigger("click");
+                $( "#search-field" ).val("");
+                displayBlogs(data.content);
+                $('#getKeywordToSearch').val('');
+                $('.navigation').hide();
+            }
+        })
+    }
+}

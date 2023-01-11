@@ -143,6 +143,7 @@ function getTotalCommentsEachBLog(blogId) {
 function logOut() {
     sessionStorage.removeItem("userId");
     window.location.href = "index.html";
+    event.preventDefault();
 }
 
 function toAdminPage() {

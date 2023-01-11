@@ -12,7 +12,7 @@
     <link rel="shortcut icon" href="images/ico/favicon.ico">
     <link rel="apple-touch-icon" href="images/ico/apple-touch-icon.png"/>
 
-    <title>Editor - a wordpress blog</title>
+    <title>ZLOGS - a wordpress blog</title>
 
     <!-- FONTS -->
     <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,800,700,600,300'
@@ -77,12 +77,11 @@
             <div class="search-container">
 
                 <div class="search-box">
-                    <form role="search" method="get" class="search-form" action="#">
                         <label>Search for
-                            <input type="search" id="search-field" placeholder="type and hit enter" name="s">
+                            <input type="search" id="search-field"
+                                   onkeydown="searchBlogsss()"
+                                   placeholder="type and hit enter" name="s">
                         </label>
-                        <input type="submit" class="search-submit" value="Search">
-                    </form>
                 </div>
 
             </div>
@@ -134,7 +133,11 @@
                 <div class="layout-full"> <!-- .hentry -->
                     <article class="hentry">
                         <!-- .entry-header -->
-                        <div id="veryFirstBLog"></div>
+                        <div class="entry-content" id="veryFirstBLog"></div>
+                        <div class="row">
+                            <div class="col-md-3" id="alertttt"></div>
+                        </div>
+                        <div ></div>
                         <div class="row">
 <!--                            <div class="col-md-2"></div>-->
 <!--                            <div class="col-md-8">-->
