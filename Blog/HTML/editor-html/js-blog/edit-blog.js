@@ -60,7 +60,7 @@ function getValueToCreateBogg() {
         }, 1000);
     } else if (content.length <= 300) {
         $("#alerttt").empty();
-        let content1 = `<h3 class="alert error"> 300 characters must be minimum</h3>`
+        let content1 = `<h3 class="alert error"> Minimum 300 characters is required</h3>`
         $("#alerttt").append(content1);
         window.scrollTo(0, 0);
         $("#alerttt").show();
@@ -97,9 +97,15 @@ function getValueToCreateBogg() {
                 $("#alerttt").append(content1);
                 $("#alerttt").show();
                 window.scrollTo(0, 0);
+
                 setTimeout(function () {
                     $('#alerttt').fadeOut('slow');
-                }, 2000);
+                }, 1500);
+
+                setTimeout(function () {
+                    window.location.href = "index.html";
+                }, 2500);
+
                 editorr.setData('');
                 $("#formmmmm")[0].reset();
             }

@@ -85,9 +85,15 @@ function getValueToCreateBog() {
                 $("#alerttt").append(content1);
                 $("#alerttt").show();
                 window.scrollTo(0, 0);
+
                 setTimeout(function () {
                     $('#alerttt').fadeOut('slow');
-                }, 2000);
+                }, 1500);
+
+                setTimeout(function () {
+                    window.location.href = "index.html";
+                }, 2500);
+
                 $("#formmmmm")[0].reset();
                 editor.setData('');
             }
