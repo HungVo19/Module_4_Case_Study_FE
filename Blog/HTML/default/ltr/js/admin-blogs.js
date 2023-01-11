@@ -49,7 +49,7 @@ function showBlogs(data) {
 
             $.each(data.content, (i, blogs) =>{
 
-                let status = blogs.status ? `<span class="shadow-none badge badge-danger" style="width: 80px">Hide</span>` : `<span class="shadow-none badge badge-success" style="width: 80px">Show</span>`
+                let status = blogs.status ?   `<span class="shadow-none badge badge-success" style="width: 80px">On</span>`:`<span class="shadow-none badge badge-danger" style="width: 80px">Off</span>`
                 let privacy = blogs.privacy?  `<a>public</a>` : `<a>private</a>`
                 let blogRow =`<tr>
                     <td class="checkbox-column text-center">${count++}</td>
