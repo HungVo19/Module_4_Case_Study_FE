@@ -63,44 +63,6 @@ function findAvatarUserByUserId(id) {
     return avatar;
 }
 
-// function drawNavigationBarr() {
-//     let content = "";
-//     if (sessionStorage.getItem("userId") == null) {
-//         content = `<img alt="" src="images/site/default-avatar.jpg"
-//                              class="avatar avatar-44 photo"
-//                              height="35" width="35" style="border-radius: 50%">
-//                         <ul>
-//                             <li><a href="login-register.html">Login/Register</a></li>
-//                         </ul>`
-//     } else {
-//         let userAvatarr = findAvatarUserByUserId(sessionStorage.getItem("userId"));
-//         let userNamee = findUserNameByUserId(sessionStorage.getItem("userId"));
-//         if (sessionStorage.getItem("userRole") == 1) {
-//             content = `<img alt="" src="${userAvatarr}"
-//                              class="avatar avatar-44 photo"
-//                              height="35" width="35" style="border-radius: 50%">
-//                         <ul>
-//
-//                             <li><a >Hi ${userNamee}</a></li>
-//                             <li><a href="post-blog.html">Post New Blog</a></li>
-//                             <li><a href="blog-simple.html">Profile</a></li>
-//                             <li><a href="user-manage-post.html">Manage Post</a></li>
-//                             <li><a href="" onclick="logOut()">Logout</a></li>
-//                         </ul>`
-//         } else {
-//             content = `<img alt="" src="${userAvatarr}"
-//                              class="avatar avatar-44 photo"
-//                              height="35" width="35" style="border-radius: 50%">
-//                         <ul>
-//                             <li><a href="" onclick="toAdminPage()">Go to Admin Page</a></li>
-//                             <li><a href="" onclick="logOut()">Logout</a></li>
-//                         </ul>`
-//         }
-//
-//     }
-//     $("#checkLogin").html(content);
-// }
-
 function changePasssss() {
     let newPass = $('#newPass').val();
     let confirmPass = $('#newRePass').val();
@@ -126,7 +88,15 @@ function changePasssss() {
             datatype: 'json',
 
             success: function () {
-                alert("Change password success");
+                Swal.fire(
+                    'Change password success!'
+                )
+                sessionStorage.clear();
+
+                setTimeout(function(){
+                    window.location.href = "./login-register.html"
+                }, 2000);
+
             },
             error: function (xhr) {
                 if (xhr.responseText === "New password can not same current password") {
